@@ -32,6 +32,7 @@ doctl kubernetes cluster kubeconfig save 91e70185-3665-4e51-bf32-f8185f48d1ab # 
 
 
 ## Re-build microservices docker images
+* configure the export paths in micro/rebuild.sh file
 * simply use the micro/rebuild.sh
 ```sh
 cd micro

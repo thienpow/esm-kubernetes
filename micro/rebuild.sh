@@ -1,5 +1,25 @@
 #!/bin/bash
 
+#
+# modify the export paths below to the right one on your device
+#
+export ESM_ADMIN_SOURCE_FOLDER="/users/thienpow/development/esm/frontend/esm-admin"
+export ESM_HOMEAPP_SOURCE_FOLDER="/users/thienpow/development/esm/frontend/esportsmini"
+
+
+if [ ! -d $ESM_ADMIN_SOURCE_FOLDER ] 
+then
+    echo "Directory ESM_ADMIN_SOURCE_FOLDER DOES NOT exists." 
+    exit 9999 # die with error code 9999
+fi
+
+if [ ! -d $ESM_HOMEAPP_SOURCE_FOLDER ] 
+then
+    echo "Directory ESM_HOMEAPP_SOURCE_FOLDER DOES NOT exists." 
+    exit 9999 # die with error code 9999
+fi
+
+
 doctl registry login
 
 LD="$(../helper_sh/check_current_cluster.sh)" # auto check and set the value for live or dev cluster.

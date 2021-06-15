@@ -1,14 +1,37 @@
 #!/bin/bash
 
 
-cd "../../../../FrontEnd/esportsmini"
+ORIGIN_FOLDER=${PWD}
+
+
+if [ ! -d $ESM_HOMEAPP_SOURCE_FOLDER ] 
+then
+    echo "Directory ESM_HOMEAPP_SOURCE_FOLDER DOES NOT exists." 
+    exit 9999 # die with error code 9999
+fi
+
+cd $ESM_HOMEAPP_SOURCE_FOLDER
 #echo "I am in... ${PWD}"
 SOURCE_FOLDER=${PWD}/build/*
 
-npm run build
+
+while true; do
+  read -p "Do you want to do git pull and npm run build on the source code? (y/n) : " yn
+  case $yn in
+    [Yy]* ) 
+      git pull
+      npm run build
+      break;;
+    [Nn]* ) break;;
+    * ) 
+      echo "Please answer y or n."
+      ;;
+  esac
+done
+
 
 # cd back to homeapp folder
-cd "../../BackEnd/kubernetes/micro/homeapp"
+cd $ORIGIN_FOLDER
 #echo "I am in... ${PWD}"
 TARGET_FOLDER=${PWD}/www
 
