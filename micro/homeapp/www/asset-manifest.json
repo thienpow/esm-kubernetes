@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "https://esm-cdn.sgp1.cdn.digitaloceanspaces.com/app/dev/static/css/main.cf25d53d.chunk.css",
-    "main.js": "https://esm-cdn.sgp1.cdn.digitaloceanspaces.com/app/dev/static/js/main.d0bac9c6.chunk.js",
-    "main.js.map": "https://esm-cdn.sgp1.cdn.digitaloceanspaces.com/app/dev/static/js/main.d0bac9c6.chunk.js.map",
+    "main.js": "https://esm-cdn.sgp1.cdn.digitaloceanspaces.com/app/dev/static/js/main.8911f8dd.chunk.js",
+    "main.js.map": "https://esm-cdn.sgp1.cdn.digitaloceanspaces.com/app/dev/static/js/main.8911f8dd.chunk.js.map",
     "runtime-main.js": "https://esm-cdn.sgp1.cdn.digitaloceanspaces.com/app/dev/static/js/runtime-main.cf2a09ad.js",
     "runtime-main.js.map": "https://esm-cdn.sgp1.cdn.digitaloceanspaces.com/app/dev/static/js/runtime-main.cf2a09ad.js.map",
     "static/css/2.532db66e.chunk.css": "https://esm-cdn.sgp1.cdn.digitaloceanspaces.com/app/dev/static/css/2.532db66e.chunk.css",
@@ -18,6 +18,6 @@
     "static/css/2.532db66e.chunk.css",
     "static/js/2.49e521a9.chunk.js",
     "static/css/main.cf25d53d.chunk.css",
-    "static/js/main.d0bac9c6.chunk.js"
+    "static/js/main.8911f8dd.chunk.js"
   ]
 }
