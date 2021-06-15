@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: esm-homeapp
+  labels:
+    app: esm-homeapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: esm-homeapp
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: esm-homeapp
+    spec:
+      containers:
+      - name: esm-homeapp 
+        image: registry.digitalocean.com/esm-dev/live-homeapp:latest
+        env:
+          - name: LISTEN_ON
+            value: 0.0.0.0:3388
+        resources: {}
+        ports:
+          - containerPort: 3388
+      imagePullSecrets:
+      - name: registry-esm-dev

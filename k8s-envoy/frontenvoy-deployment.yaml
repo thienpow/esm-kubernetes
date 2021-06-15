@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontenvoy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontenvoy
+  template:
+    metadata:
+      labels:
+        app: frontenvoy
+    spec:
+      containers:
+      - name: frontenvoy
+        image: envoyproxy/envoy:v1.18.3
+        env:
+        - name: ENVOY_GID
+          value: "0"
+        - name: ENVOY_UID
+          value: "0"
+        resources: {}
+        ports:
+        - name: http
+          containerPort: 8080
+        - name: https
+          containerPort: 8443
+        - name: postgres
+          containerPort: 15432
+        volumeMounts:
+        - name: config
+          mountPath: /etc/envoy
+        - name: certs
+          mountPath: /etc/ssl/envoy
+      volumes:
+      - name: config
+        configMap:
+          name: frontenvoy-configmap
+      - name: certs
+        secret:
+          secretName: letsencrypt-tls-certs
+status: {}

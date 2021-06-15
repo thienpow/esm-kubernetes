@@ -1,0 +1,44 @@
+
+         
+      securityContext:
+        runAsUser: 0
+        runAsGroup: 0
+        fsGroup: 0
+        fsGroupChangePolicy: "Always"
+
+                    - match:
+                      safe_regex:
+                        google_re2: {}
+                        regex: ^/([^/]+)(/.*)$
+                    route:
+                      regex_rewrite:
+                        pattern: 
+                          google_re2: {}
+                          regex: ^/([^/]+)(/.*)$
+                        substitution: "/\\1"
+                      cluster: esm-homeapp
+
+                  - match:
+                      prefix: "/login"
+                    route:
+                      prefix_rewrite: "/"
+                      cluster: esm-homeapp
+                  - match:
+                      prefix: "/activity"
+                    route:
+                      prefix_rewrite: "/"
+                      cluster: esm-homeapp
+                  - match:
+                      prefix: "/winners"
+                    route:
+                      prefix_rewrite: "/"
+                      cluster: esm-homeapp
+                  - match:
+                      prefix: "/offerwall"
+                    route:
+                      prefix_rewrite: "/"
+                      cluster: esm-homeapp
+                  - match:
+                      prefix: "/"
+                    route:
+                      cluster: esm-homeapp

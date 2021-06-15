@@ -1,0 +1,74 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pg-master
+  labels:
+    app: pg-master
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pg-master
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: pg-master
+    spec:
+      containers:
+      - name: pg-master
+        image: registry.digitalocean.com/esm-dev/dev-pg-master:latest
+        args: 
+        - -c
+        - listen_addresses=*
+        - -c
+        - port=5432
+        - -c
+        - ssl=on
+        - -c
+        - ssl_cert_file=/var/lib/postgresql/server.crt
+        - -c
+        - ssl_key_file=/var/lib/postgresql/server.key
+        - -c
+        - ssl_ca_file=/var/lib/postgresql/ca.crt
+        - -c
+        - ssl_crl_file=/var/lib/postgresql/ca.crl
+        - -c
+        - hot_standby=on
+        - -c
+        - wal_level=replica
+        - -c
+        - wal_keep_size=1024
+        - -c
+        - max_wal_senders=10
+        - -c
+        - wal_compression=on
+        - -c
+        - archive_mode=on
+        - -c
+        - archive_command=cd .
+        env:
+        - name: PG_REP_PASSWORD
+          value: tf45h3hpz6xstby6
+        - name: PG_REP_USER
+          value: replicator
+        - name: POSTGRES_DB
+          value: postgres
+        - name: POSTGRES_PASSWORD
+          value: tf45h3hpz6xstby6
+        - name: POSTGRES_USER
+          value: doadmin
+        ports:
+          - containerPort: 5432
+        resources: {}
+        volumeMounts:
+          - name: pg-master-data
+            mountPath: /var/lib/postgresql/data/
+            subPath: postgres
+      imagePullSecrets:
+      - name: registry-esm-dev
+      volumes:
+        - name: pg-master-data
+          persistentVolumeClaim:
+            claimName: postgres-master-pvc

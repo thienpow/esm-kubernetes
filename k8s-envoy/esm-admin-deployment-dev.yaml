@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: esm-admin
+  labels:
+    app: esm-admin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: esm-admin
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: esm-admin
+    spec:
+      containers:
+      - name: esm-admin 
+        image: registry.digitalocean.com/esm-dev/dev-admin:latest
+        env:
+          - name: LISTEN_ON
+            value: 0.0.0.0:3030
+        resources: {}
+        ports:
+          - containerPort: 3030
+      imagePullSecrets:
+      - name: registry-esm-dev

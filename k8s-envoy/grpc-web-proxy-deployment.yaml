@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grpc-web-proxy
+  labels:
+    app: grpc-web-proxy
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: grpc-web-proxy
+  template:
+    metadata:
+      labels:
+        app: grpc-web-proxy
+    spec:
+      containers:
+      - name: grpc-web-proxy
+        image: envoyproxy/envoy:v1.18.3
+        env:
+        - name: ENVOY_GID
+          value: "0"
+        - name: ENVOY_UID
+          value: "0"
+        resources: {}
+        ports:
+        - containerPort: 8087
+        volumeMounts:
+        - name: config
+          mountPath: /etc/envoy
+      volumes:
+      - name: config
+        configMap:
+          name: grpc-web-proxy-configmap

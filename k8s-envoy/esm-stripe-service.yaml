@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: esm-stripe
+  labels:
+    app: esm-stripe
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      port: 80
+      targetPort: 4242
+  selector:
+    app: esm-stripe
+status:
+  loadBalancer: {}

@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: certbot
+  labels:
+    app: certbot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: certbot
+  template:
+    metadata:
+      labels:
+        app: certbot
+    spec:
+      serviceAccountName: certbot
+      containers:
+      - name: certbot
+        image: thienpow/certbot:latest
+        env:
+        #- name: GOT_NEW # must remove when the new cert alredy expanded. can use # to remark it out
+        #  value: new # remove when the new cert already expanded. and apply -f again.
+        - name: LISTEN_ON
+          value: 0.0.0.0:3099
+        - name: WWW_FOLDER
+          value: www
+        - name: SERVICE_NAME
+          value: certbot
+        - name: CERTBOT_PARAMS
+          value: "--domains esportsmini.com -d esportsmini.com -d www.esportsmini.com -d live-gloader.esportsmini.com -d live-api.esportsmini.com -d live-admin.esportsmini.com -d live-stripe.esportsmini.com"
+        - name: CERT_NAME
+          value: esportsmini.com-0001
+        - name: CERT_EMAIL
+          value: thienpow@gmail.com
+        resources: {}
+        ports:
+        - containerPort: 80
+        - containerPort: 3099
+        volumeMounts:
+        - name: etc-letsencrypt-folder
+          mountPath: /etc/letsencrypt
+      imagePullSecrets:
+      - name: registry-esm-dev
+      volumes:
+      - name: etc-letsencrypt-folder
+        persistentVolumeClaim:
+          claimName: certbot-pvc
+      

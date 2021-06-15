@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pg-standby
+  labels:
+    app: pg-standby
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: pg-standby
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: pg-standby
+    spec:
+      containers:
+      - name: pg-standby
+        image: registry.digitalocean.com/esm-dev/dev-pg-standby:latest
+        args: 
+        - gosu 
+        - postgres 
+        - postgres 
+        - -c
+        - listen_addresses=*
+        - -c
+        - port=5433
+        - -c
+        - ssl=on
+        - -c
+        - ssl_cert_file=/var/lib/postgresql/server.crt
+        - -c
+        - ssl_key_file=/var/lib/postgresql/server.key
+        - -c
+        - ssl_ca_file=/var/lib/postgresql/ca.crt
+        - -c
+        - ssl_crl_file=/var/lib/postgresql/ca.crl
+        #- -c
+        #- restore_command='cp /archives/%f %p'
+        - -c
+        - primary_conninfo=user=replicator password=tf45h3hpz6xstby6 channel_binding=prefer host=pg-master port=25432 sslmode=prefer sslcompression=0 ssl_min_protocol_version=TLSv1.2 gssencmode=prefer krbsrvname=postgres target_session_attrs=any
+        
+        env:
+        - name: PG_REP_PASSWORD
+          value: tf45h3hpz6xstby6
+        - name: PG_REP_USER
+          value: replicator
+        - name: POSTGRES_DB
+          value: postgres
+        - name: POSTGRES_PASSWORD
+          value: tf45h3hpz6xstby6
+        - name: POSTGRES_USER
+          value: doadmin
+        - name: PG_MASTER_HOST
+          value: pg-master
+        - name: PG_MASTER_PORT
+          value: '25432'
+        ports:
+          - containerPort: 5433
+        resources: {}
+      imagePullSecrets:
+      - name: registry-esm-dev

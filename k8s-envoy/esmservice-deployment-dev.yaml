@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: esmservice
+  labels:
+    app: esmservice
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: esmservice
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: esmservice
+    spec:
+      containers:
+      - name: esmservice
+        image: registry.digitalocean.com/esm-dev/dev-service:latest
+        env:
+        - name: BEFORE_LOGIN_TOKEN
+          value: Bearer before-login-token
+        - name: CHECKER_TIME_WAIT
+          value: "60"
+        - name: DB_CERT_PATH
+          value: /etc/ssl/certs/ca.crt
+        - name: DB_CONN_STRING
+          value: postgresql://doadmin:tf45h3hpz6xstby6@pgpool:9999/postgres?sslmode=disable
+        - name: FCM_KEY
+          value: AAAAzT8d8lM:APA91bHtFSHVIBiiSDUWSaUkrYNrcBSyhMY_JBYSeaaoWpkrxSgBO-7xgHtySH3qfTvsgHHTIsrh_SwwirCvTTuOWBl0--JhddEV8MFnEgWuGRPOXPVyTBHym5k9gh8WrCxr-rY13Y54
+        - name: JWK_AUDIENCE
+          value: esports-mini
+        - name: JWK_ISSUER
+          value: https://securetoken.google.com/esports-mini
+        - name: JWK_URL
+          value: https://www.googleapis.com/service_accounts/v1/jwk/securetoken@system.gserviceaccount.com
+        - name: LISTEN_ON
+          value: 0.0.0.0:50051
+        - name: SERVER_TIMEZONE
+          value: "8"
+        - name: STRIPE_SECRET
+          value: sk_test_51IOa7gBGCaV2oEVpEDw9fOn1fUn8IaPOemu7Yjkg6N75C3ahsd7sEQr3ait4JYU55wfCBbXCRPIhcUxGMVtQYA6A003YKMqkYF
+        resources: {}
+        ports:
+        - containerPort: 50051
+          
+        volumeMounts:
+        - name: pg-ca
+          mountPath: /etc/ssl/certs/ca.crt
+          subPath: ca.crt
+          readOnly: true
+      imagePullSecrets:
+      - name: registry-esm-dev
+      volumes:
+        - name: pg-ca
+          secret:
+            secretName: pg-ca-secret

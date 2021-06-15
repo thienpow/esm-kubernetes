@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pgpool
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pgpool
+  template:
+    metadata:
+      labels:
+        app: pgpool
+    spec:
+      containers:
+      - name: pgpool
+        image: pgpool/pgpool:latest
+        env:
+        - name: POSTGRES_USERNAME
+          value: doadmin
+        - name: POSTGRES_PASSWORD
+          value: tf45h3hpz6xstby6
+        resources: {}
+        volumeMounts:
+        - name: pgpool-config
+          mountPath: /config
+      volumes:
+      - name: pgpool-config
+        configMap:
+          name: pgpool-config

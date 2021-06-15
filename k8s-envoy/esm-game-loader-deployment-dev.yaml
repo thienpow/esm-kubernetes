@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: esm-game-loader
+  labels:
+    app: esm-game-loader
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: esm-game-loader
+  template:
+    metadata:
+      labels:
+        app: esm-game-loader
+    spec:
+      containers:
+      - name: esm-game-loader
+        image: registry.digitalocean.com/esm-dev/dev-gloader:latest
+        env:
+        - name: DB_CERT_PATH
+          value: /etc/ssl/certs/ca.crt
+        - name: DB_CONN_STRING
+          value: postgresql://doadmin:tf45h3hpz6xstby6@pgpool:9999/postgres?sslmode=disable
+        - name: JWK_AUDIENCE
+          value: esports-mini
+        - name: JWK_ISSUER
+          value: https://securetoken.google.com/esports-mini
+        - name: JWK_URL
+          value: https://www.googleapis.com/service_accounts/v1/jwk/securetoken@system.gserviceaccount.com
+        - name: LISTEN_ON
+          value: 0.0.0.0:3033
+        - name: SERVER_TIMEZONE
+          value: "8"
+        resources: {}
+        ports:
+        - containerPort: 3033
+        volumeMounts:
+        - name: pg-ca
+          mountPath: /etc/ssl/certs/ca.crt
+          subPath: ca.crt
+          readOnly: false
+      imagePullSecrets:
+      - name: registry-esm-dev
+      volumes:
+        - name: pg-ca
+          secret:
+            secretName: pg-ca-secret
+      
