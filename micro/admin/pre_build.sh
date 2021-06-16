@@ -14,12 +14,14 @@ cd $ESM_ADMIN_SOURCE_FOLDER # this is esm-admin source code folder
 #echo "I am in... ${PWD}"
 SOURCE_FOLDER=${PWD}/www/*
 
+echo ""
+echo ""
 while true; do
-  read -p "Do you want to do git pull and npm run build on the source code? (y/n) : " yn
+  read -p "Do you want to do git pull and yarn build on the [ admin ] source code? (y/n) : " yn
   case $yn in
     [Yy]* ) 
       git pull
-      npm run build
+      yarn build
       break;;
     [Nn]* ) break;;
     * ) 

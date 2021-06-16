@@ -15,12 +15,15 @@ cd $ESM_HOMEAPP_SOURCE_FOLDER
 SOURCE_FOLDER=${PWD}/build/*
 
 
+echo ""
+echo ""
 while true; do
-  read -p "Do you want to do git pull and npm run build on the source code? (y/n) : " yn
+  read -p "Do you want to do git pull and yarn build on the [ homeapp ] source code? (y/n) : " yn
   case $yn in
     [Yy]* ) 
+      rm .eslintcache
       git pull
-      npm run build
+      yarn build
       break;;
     [Nn]* ) break;;
     * ) 

@@ -7,7 +7,7 @@ must have the following installed:
 * kubectl = brew install kubectl
 * certstrap = brew install certstrap
 * base64 = brew install base64
-
+* yarn = brew install yarn
 
 #### Generate Personal Access Token at DigitalOcean API menu
 ```sh
@@ -17,6 +17,7 @@ doctl auth init
 
 
 #### Create cluster
+* don't really need to create already. because existing one already working.
 ```sh
 doctl k8s cluster create esm-cluster-sgp-01 --region "sgp1" --auto-upgrade --node-pool "name=esmpool;auto-scale=true;min-nodes=1;max-nodes=10"
 ```

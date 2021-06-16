@@ -1,7 +1,4 @@
-FROM alpine:3.13.5
-
-COPY ./wwwloader /wwwloader
-RUN chmod u+x /wwwloader
+FROM thienpow/wwwloader:latest
 
 COPY ./www /www
 
