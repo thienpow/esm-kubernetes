@@ -105,31 +105,6 @@ COPY public."timezones" (id, "offset", stext, ltext) FROM stdin;
 31	12	GMT +12:00	(GMT +12:00) Auckland, Wellington, Fiji, Kamchatka
 \.
 --
--- public.rank
---
-COPY public."rank" (id, title, "exp", gem, multiplier) FROM stdin;
-1	Level  1	0	0	0
-2	Level 2	15	1	0.02
-3	Level 3	50	1	0.03
-4	Level 4	100	1	0.04
-5	Level 5	180	1	0.05
-6	Level 6	300	2	0.06
-7	Level 7	450	2	0.07
-8	Level 8	630	2	0.08
-9	Level 9	850	2	0.09
-10	Level 10	1100	2	0.1
-11	Level 11	1850	3	0.11
-12	Level 12	2850	3	0.12
-13	Level 13	4100	3	0.13
-14	Level 14	5600	3	0.14
-15	Level 15	7350	3	0.15
-16	Level 16	9500	5	0.16
-17	Level 17	11800	5	0.17
-18	Level 18	14300	5	0.18
-19	Level 19	17050	5	0.19
-20	Level 20	20000	10	0.2
-\.
---
 -- public.user
 --
 COPY public."user" (id, username, passhash, email, phone, firstname, lastname, created_on, last_login, role_id, status, gem_balance, social_link_fb, social_link_google, avatar_url, exp, full_name, country_code, address, city, state, zip_code, country, is_email_confirmed, is_notify_allowed, is_notify_new_reward, is_notify_new_tournament, is_notify_tour_ending, nick_name, rank, msg_token, subscription_id, one_time_multiplier, daily_gem, daily_multiplier, one_time_is_firstonly, sub_daily_timestamp, exp_timestamp, msg_token_timestamp, sub_id) FROM stdin;
@@ -140,18 +115,6 @@ COPY public."user" (id, username, passhash, email, phone, firstname, lastname, c
 --
 COPY public.checker_log (id, current_game_checked_on, current_game_time_spent, leaderboard_checked_on, leaderboard_time_spent, subscriber_checked_on, subscriber_time_spent, unclaim_checked_on, unclaim_time_spent) FROM stdin;
 1	2021-06-05 08:32:30.925605	0	2021-06-05 08:32:20.223155	0	2021-06-05 08:32:24.513802	0	2021-06-05 08:31:52.693621	0
-\.
-COPY public.spinner_rule (id, probability, win, type_id) FROM stdin;
-1	5	300	1
-2	5	150	1
-3	0.5	500	1
-4	1.5	400	1
-5	3	350	1
-6	7.5	200	1
-7	7.5	150	1
-8	30	50	1
-9	30	25	1
-10	10	10	1
 \.
 COPY public.status_progress_type (id, title) FROM stdin;
 0	Inactive

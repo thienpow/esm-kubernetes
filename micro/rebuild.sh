@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 #
 # modify the export paths below to the right one on your device

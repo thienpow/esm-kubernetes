@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 
 ORIGIN_FOLDER=${PWD}

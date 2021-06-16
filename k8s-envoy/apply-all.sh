@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 wait_time=60 # seconds
 
 LD="$(../helper_sh/check_current_cluster.sh)" # auto check and set the value for live or dev cluster.

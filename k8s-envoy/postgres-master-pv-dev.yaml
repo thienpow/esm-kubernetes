@@ -18,6 +18,6 @@ spec:
   csi:
     driver: dobs.csi.digitalocean.com
     fsType: ext4
-    volumeHandle: 6428cf35-cb52-11eb-932d-0a58ac14a211 # run `doctl compute volume list` to check for the handler
+    volumeHandle: dbf6b056-cdd7-11eb-b561-0a58ac14a28a # run `doctl compute volume list` to check for the handler
     volumeAttributes:
       com.digitalocean.csi/noformat: "true"

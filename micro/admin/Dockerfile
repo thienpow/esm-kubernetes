@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM alpine:3.13.5
 
 COPY ./wwwloader /wwwloader
 RUN chmod u+x /wwwloader

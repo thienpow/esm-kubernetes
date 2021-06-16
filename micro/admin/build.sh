@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 #
 # check if this script was started with an argv passed in. expecting live or dev

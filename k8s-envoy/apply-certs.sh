@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # if new postgres ca cert is regenerated, need to run this apply-certs.sh to restart all the linked deployments.
 

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 echo ""
 echo ""
 echo "Regenerate postgres master server.crt server.key server.csr"
