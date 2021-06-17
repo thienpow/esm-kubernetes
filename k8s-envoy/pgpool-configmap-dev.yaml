@@ -32,6 +32,12 @@ data:
     connection_cache = on
     load_balance_mode = on
     ssl = off
+    ssl_prefer_server_ciphers = on
+    ssl_key = '/certs/server.key'
+    ssl_cert = '/certs/server.crt'
+    ssl_ca_cert = '/certs/ca.crt'
+    ssl_ca_cert_dir = '/certs'
+    ssl_crl_file = '/certs/ca.crl'
     failover_on_backend_error = off
   pool_hba.conf: |-
     local   all         all                               trust

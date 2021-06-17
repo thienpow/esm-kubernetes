@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: pgpool
-        image: pgpool/pgpool:latest
+        image: registry.digitalocean.com/esm-dev/live-pg-pool:latest
         env:
         - name: POSTGRES_USERNAME
           value: doadmin

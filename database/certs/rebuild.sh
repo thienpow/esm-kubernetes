@@ -15,7 +15,8 @@ certstrap init --common-name ca
 
 cp -f out/ca.crl out/ca.crt ./../master
 cp -f out/ca.crl out/ca.crt ./../standby
-echo  "copied new ca.crl and ca.crt to ./../master ./../standby folder."
+cp -f out/ca.crl out/ca.crt ./../pgpool
+echo  "copied new ca.crl and ca.crt to ./../master ./../standby and ./../pgpool folder."
 
 #
 # backup the ca key/cert
@@ -29,12 +30,13 @@ base64Value=$(base64 out/ca.crt)
 sed "s/ca_token_here/$base64Value/g" pg-ca-secret-template.yaml > pg-ca-secret-$LD.yaml
 cp pg-ca-secret-$LD.yaml ./../../k8s-envoy/
 
-echo "./../../k8s-envoy/pg-ca-secret.yaml is replaced with new ca.crt value"
+echo "./../../k8s-envoy/pg-ca-secret-${LD}.yaml is replaced with new ca.crt value"
 echo  "done ca"
 echo  "_____________________________________________________________________________________"
 
 ./regen_master.sh
 ./regen_standby.sh
+./regen_pgpool.sh
 
 #
 # rebuild the docker images and push to registry
@@ -42,6 +44,8 @@ echo  "_________________________________________________________________________
 cd ./../master
 ./build.sh
 cd ./../standby
+./build.sh
+cd ./../pgpool
 ./build.sh
 
 

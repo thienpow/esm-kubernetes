@@ -12,12 +12,12 @@ spec:
   # "Delete" if you wish the volume to be deleted automatically with the PVC
   persistentVolumeReclaimPolicy: Retain
   capacity:
-    storage: 5Gi
+    storage: 20Gi
   accessModes:
     - ReadWriteOnce
   csi:
     driver: dobs.csi.digitalocean.com
     fsType: ext4
-    volumeHandle: ca15bf85-cc3d-11eb-b561-0a58ac14a28a # run `doctl compute volume list` to check for the handler
+    volumeHandle: a30a7fc8-cf31-11eb-bafd-0a58ac14a425 # run `doctl compute volume list` to check for the handler
     volumeAttributes:
       com.digitalocean.csi/noformat: "true"

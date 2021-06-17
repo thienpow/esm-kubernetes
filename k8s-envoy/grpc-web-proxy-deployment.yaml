@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: grpc-web-proxy
-        image: envoyproxy/envoy:v1.18.3
+        image: envoyproxy/envoy-alpine:v1.18.3
         env:
         - name: ENVOY_GID
           value: "0"
