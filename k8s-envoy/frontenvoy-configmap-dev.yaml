@@ -77,13 +77,13 @@ data:
                   - match:
                       safe_regex:
                         google_re2: {}
-                        regex: ^\/(activity|winners)$
+                        regex: ^(.+?)(\.[^.])$
                     route:
-                      prefix_rewrite: "/#"
                       cluster: esm-homeapp
                   - match:
                       prefix: "/"
                     route:
+                      prefix_rewrite: "/#"
                       cluster: esm-homeapp
                 - name: admin
                   domains:

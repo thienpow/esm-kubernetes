@@ -1,7 +1,10 @@
 #!/bin/sh
+
+
 wait_time=60 # seconds
 
 LD="$(../helper_sh/check_current_cluster.sh)" # auto check and set the value for live or dev cluster.
+[[ "$(../helper_sh/ask_continue.sh ${LD})" =~ 9999 ]] && exit
 
 kubectl apply -f do-secret.yaml
 kubectl apply -f pg-ca-secret-$LD.yaml

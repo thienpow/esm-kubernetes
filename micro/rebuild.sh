@@ -10,36 +10,20 @@ export ESM_HOMEAPP_SOURCE_FOLDER="/users/thienpow/development/esm/frontend/espor
 if [ ! -d $ESM_ADMIN_SOURCE_FOLDER ] 
 then
     echo "Directory ESM_ADMIN_SOURCE_FOLDER DOES NOT exists." 
-    exit 9999 # die with error code 9999
+    exit
 fi
 
 if [ ! -d $ESM_HOMEAPP_SOURCE_FOLDER ] 
 then
     echo "Directory ESM_HOMEAPP_SOURCE_FOLDER DOES NOT exists." 
-    exit 9999 # die with error code 9999
+    exit
 fi
 
 
 doctl registry login
 
 LD="$(../helper_sh/check_current_cluster.sh)" # auto check and set the value for live or dev cluster.
-clear
-while true; do
-  read -p "You are now in $LD cluster.  Are you sure want to continue? (y/n) : " yn
-  case $yn in
-    [Yy]* ) 
-      break;;
-    [Nn]* ) exit;;
-    * ) 
-      clear
-      echo "Please answer y or n."
-      ;;
-  esac
-done
-echo ""
-echo "_____________________________________________________________________________________"
-echo ""
-
+[[ "$(../helper_sh/ask_continue.sh ${LD})" =~ 9999 ]] && exit
 
 
 while :; do

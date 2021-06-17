@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "https://esm-cdn.sgp1.cdn.digitaloceanspaces.com/app/dev/static/css/main.cf25d53d.chunk.css",
-    "main.js": "https://esm-cdn.sgp1.cdn.digitaloceanspaces.com/app/dev/static/js/main.70c9cc33.chunk.js",
-    "main.js.map": "https://esm-cdn.sgp1.cdn.digitaloceanspaces.com/app/dev/static/js/main.70c9cc33.chunk.js.map",
+    "main.js": "https://esm-cdn.sgp1.cdn.digitaloceanspaces.com/app/dev/static/js/main.b345828c.chunk.js",
+    "main.js.map": "https://esm-cdn.sgp1.cdn.digitaloceanspaces.com/app/dev/static/js/main.b345828c.chunk.js.map",
     "runtime-main.js": "https://esm-cdn.sgp1.cdn.digitaloceanspaces.com/app/dev/static/js/runtime-main.cf2a09ad.js",
     "runtime-main.js.map": "https://esm-cdn.sgp1.cdn.digitaloceanspaces.com/app/dev/static/js/runtime-main.cf2a09ad.js.map",
     "static/css/2.532db66e.chunk.css": "https://esm-cdn.sgp1.cdn.digitaloceanspaces.com/app/dev/static/css/2.532db66e.chunk.css",
-    "static/js/2.c102ef73.chunk.js": "https://esm-cdn.sgp1.cdn.digitaloceanspaces.com/app/dev/static/js/2.c102ef73.chunk.js",
-    "static/js/2.c102ef73.chunk.js.map": "https://esm-cdn.sgp1.cdn.digitaloceanspaces.com/app/dev/static/js/2.c102ef73.chunk.js.map",
+    "static/js/2.37a4392f.chunk.js": "https://esm-cdn.sgp1.cdn.digitaloceanspaces.com/app/dev/static/js/2.37a4392f.chunk.js",
+    "static/js/2.37a4392f.chunk.js.map": "https://esm-cdn.sgp1.cdn.digitaloceanspaces.com/app/dev/static/js/2.37a4392f.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.532db66e.chunk.css.map": "https://esm-cdn.sgp1.cdn.digitaloceanspaces.com/app/dev/static/css/2.532db66e.chunk.css.map",
     "static/css/main.cf25d53d.chunk.css.map": "https://esm-cdn.sgp1.cdn.digitaloceanspaces.com/app/dev/static/css/main.cf25d53d.chunk.css.map",
-    "static/js/2.c102ef73.chunk.js.LICENSE.txt": "https://esm-cdn.sgp1.cdn.digitaloceanspaces.com/app/dev/static/js/2.c102ef73.chunk.js.LICENSE.txt"
+    "static/js/2.37a4392f.chunk.js.LICENSE.txt": "https://esm-cdn.sgp1.cdn.digitaloceanspaces.com/app/dev/static/js/2.37a4392f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.cf2a09ad.js",
     "static/css/2.532db66e.chunk.css",
-    "static/js/2.c102ef73.chunk.js",
+    "static/js/2.37a4392f.chunk.js",
     "static/css/main.cf25d53d.chunk.css",
-    "static/js/main.70c9cc33.chunk.js"
+    "static/js/main.b345828c.chunk.js"
   ]
 }
