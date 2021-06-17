@@ -25,7 +25,7 @@ spec:
         - name: DB_CERT_PATH
           value: /etc/ssl/certs/ca.crt
         - name: DB_CONN_STRING
-          value: postgresql://doadmin:tf45h3hpz6xstby6@pgpool:9999/postgres?sslmode=disable
+          value: postgresql://doadmin:tf45h3hpz6xstby6@pgpool:9999/postgres?sslmode=require
         - name: FCM_KEY
           value: AAAAzT8d8lM:APA91bHtFSHVIBiiSDUWSaUkrYNrcBSyhMY_JBYSeaaoWpkrxSgBO-7xgHtySH3qfTvsgHHTIsrh_SwwirCvTTuOWBl0--JhddEV8MFnEgWuGRPOXPVyTBHym5k9gh8WrCxr-rY13Y54
         - name: SERVER_TIMEZONE

@@ -31,7 +31,7 @@ data:
     client_idle_limit = 0
     connection_cache = on
     load_balance_mode = on
-    ssl = off
+    ssl = on
     ssl_prefer_server_ciphers = on
     ssl_key = '/certs/server.key'
     ssl_cert = '/certs/server.crt'

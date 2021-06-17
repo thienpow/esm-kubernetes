@@ -21,7 +21,7 @@ spec:
         - name: DB_CERT_PATH
           value: /etc/ssl/certs/ca.crt
         - name: DB_CONN_STRING
-          value: postgresql://doadmin:tf45h3hpz6xstby6@pgpool:9999/postgres?sslmode=disable
+          value: postgresql://doadmin:tf45h3hpz6xstby6@pgpool:9999/postgres?sslmode=require
         - name: JWK_AUDIENCE
           value: esports-mini
         - name: JWK_ISSUER

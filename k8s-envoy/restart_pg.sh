@@ -21,5 +21,5 @@ kubectl apply -f pgpool-deployment-$LD.yaml
 echo "postgres-master-deployment-${LD}.yaml is not applied.  "
 echo "Reason: you need to manually check and wait for the existing pg-master already down and removed from Deployment. "
 echo "Don't rush to apply it because it will cause a 2 pg-master trying to access to the Volume and stuck with a deadlock postmaster.pid"
-echo -p "Press any key to start watching the pg-master status"
+read -p "Press any key to start watching the pg-master status"
 kubectl get deployment pg-master -w
