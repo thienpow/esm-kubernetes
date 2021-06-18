@@ -19,6 +19,5 @@ docker rmi $image_name
 #
 # restart the deployment in kubernetes
 #
-kubectl delete -f "../../k8s-envoy/esm-game-loader-deployment-${LD}.yaml"
 kubectl apply  -f "../../k8s-envoy/esm-game-loader-deployment-${LD}.yaml"
-kubectl get deployment esm-game-loader -w
+kubectl rollout restart deployment esm-game-loader

@@ -15,10 +15,8 @@ echo "creating persistent volumes"
 kubectl apply -fhttps://raw.githubusercontent.com/digitalocean/csi-digitalocean/master/deploy/kubernetes/releases/csi-digitalocean-v2.1.1/{crds.yaml,driver.yaml,snapshot-controller.yaml}
 
 # here is our pvc
-kubectl apply -f certbot-pvc.yaml
-kubectl apply -f certbot-pv-$LD.yaml
-kubectl apply -f postgres-master-pvc.yaml
-kubectl apply -f postgres-master-pv-$LD.yaml
+kubectl apply -f certbot/certbot-pvc.yaml
+kubectl apply -f pg-master/postgres-master-pvc-$LD.yaml
 
 # ***** IMPORTANT *****
 # don't rust to next step, until you see the pvc is ready in DigitalOcean's Volume menu. 
@@ -67,6 +65,7 @@ kubectl apply -f grpc-web-proxy-deployment.yaml
 kubectl apply -f checkers-deployment-$LD.yaml
 
 
+# start frontenvoy with a nocert config first
 kubectl apply -f frontenvoy-configmap-$LD-nocert.yaml
 kubectl apply -f frontenvoy-deployment-nocert.yaml
 
@@ -88,8 +87,7 @@ done
 echo "check if the certbot is Ready, if yes, then press CTRL+C one time to continue."
 kubectl get deployment certbot -w
 
-# stop first
-kubectl delete -f frontenvoy-deployment-nocert.yaml
-# start again
+# restart frontenvoy with main config
 kubectl apply -f frontenvoy-configmap-$LD.yaml
 kubectl apply -f frontenvoy-deployment.yaml
+kubectl rollout restart deployment frontenvoy

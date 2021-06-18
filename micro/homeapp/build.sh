@@ -92,6 +92,5 @@ docker rmi $image_name
 #
 # restart the deployment in kubernetes
 #
-kubectl delete -f "../../k8s-envoy/esm-homeapp-deployment-${LD}.yaml"
 kubectl apply  -f "../../k8s-envoy/esm-homeapp-deployment-${LD}.yaml"
-kubectl get deployment esm-homeapp -w
+kubectl rollout restart deployment esm-homeapp

@@ -19,6 +19,5 @@ docker rmi $image_name
 #
 # restart the deployment in kubernetes
 #
-kubectl delete -f "../../k8s-envoy/esmservice-deployment-${LD}.yaml"
 kubectl apply  -f "../../k8s-envoy/esmservice-deployment-${LD}.yaml"
-kubectl get deployment esmservice -w
+kubectl rollout restart deployment esmservice

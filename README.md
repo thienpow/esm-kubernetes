@@ -83,3 +83,27 @@ select pg_size_pretty(pg_database_size(current_database()));
 
 select pg_size_pretty(sum(pg_database_size(datname))) from pg_database;
 ```
+
+
+# steps to resize pg-master PVC
+* don't touch it if you are unsure.
+* don't use kubectl delete -f command
+* first must stop the pg-master by stopping it in a safe way.
+```sh
+kubectl scale deploy pg-master  --replicas=0
+```
+* after stopping it with the command above, resize it via editing postgres-master-pvc-live.yaml (if you are in live cluster) in pg-master folder.
+* then,
+```sh
+kubectl apply -f postgres-master-pvc-live.yaml
+```
+* then start the pg-master again via
+```sh
+kubectl scale deploy pg-master  --replicas=1
+```
+* don't ever try --replicas greater than 1! it will cause permanant locking of the system.
+* finally,
+```sh
+kubectl rollout restart deployment pg-standby
+kubectl rollout restart deployment pgpool
+```

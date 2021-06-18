@@ -34,26 +34,26 @@ echo "./../../k8s-envoy/pg-ca-secret-${LD}.yaml is replaced with new ca.crt valu
 echo  "done ca"
 echo  "_____________________________________________________________________________________"
 
-./regen_master.sh
-./regen_standby.sh
-./regen_pgpool.sh
+./regen_master.sh $LD
+./regen_standby.sh $LD
+./regen_pgpool.sh $LD
 
 #
 # rebuild the docker images and push to registry
 #
 cd ./../master
-./build.sh
+./build.sh $LD
 cd ./../standby
-./build.sh
+./build.sh $LD
 cd ./../pgpool
-./build.sh
+./build.sh $LD
 
 
 #
 # apply all the changes to Kubernetes
 #
 cd ./../../k8s-envoy
-./apply-certs.sh
+./restart-certs-dp.sh
 
 
 #
