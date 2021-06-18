@@ -1,4 +1,5 @@
-FROM pgpool/pgpool:latest
+FROM thienpow/pgpool:latest
+
 
 COPY --chown=70:70 --chmod=600 ./server.key /certs/server.key
 COPY --chown=70:70 --chmod=600 ./server.crt /certs/server.crt

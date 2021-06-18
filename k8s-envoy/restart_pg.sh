@@ -23,3 +23,5 @@ echo "Reason: you need to manually check and wait for the existing pg-master alr
 echo "Don't rush to apply it because it will cause a 2 pg-master trying to access to the Volume and stuck with a deadlock postmaster.pid"
 read -p "Press any key to start watching the pg-master status"
 kubectl get deployment pg-master -w
+kubectl get pods | grep pg-master
+read -p "if you still can see a pg-master pod is running after the kubectl get pods above. try manually kill that first."

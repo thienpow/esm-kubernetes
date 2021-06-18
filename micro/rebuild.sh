@@ -1,10 +1,41 @@
 #!/bin/sh
 
 #
-# modify the export paths below to the right one on your device
+# modify the export values below to the right one on your deployment
 #
 export ESM_ADMIN_SOURCE_FOLDER="/users/thienpow/development/esm/frontend/esm-admin"
 export ESM_HOMEAPP_SOURCE_FOLDER="/users/thienpow/development/esm/frontend/esportsmini"
+
+export DEV_API_ENDPOINT="https:\/\/dev-api.esportsmini.com"
+export LIVE_API_ENDPOINT="https:\/\/live-api.esportsmini.com"
+
+export DEV_STRIPE_KEY="pk_test_51IOa7gBGCaV2oEVpYi9nxhSEx2tspaZAQdC5aoCgNxGJhr6BxtAnBpk1V4KuXkysmyW1QpPFVJggbRJ0L4eQdVJ30032h0Rlu9"
+export LIVE_STRIPE_KEY="pk_test_51IOa7gBGCaV2oEVpYi9nxhSEx2tspaZAQdC5aoCgNxGJhr6BxtAnBpk1V4KuXkysmyW1QpPFVJggbRJ0L4eQdVJ30032h0Rlu9"
+
+export DEV_FIREBASE_API_KEY="AIzaSyCm8agS4fK_yPGGVsGAuohxjMZCpSnBTOs"
+export LIVE_FIREBASE_API_KEY="AIzaSyCm8agS4fK_yPGGVsGAuohxjMZCpSnBTOs"
+
+export DEV_FIREBASE_AUTH_DOMAIN="esports-mini.firebaseapp.com"
+export LIVE_FIREBASE_AUTH_DOMAIN="esports-mini.firebaseapp.com"
+
+export DEV_FIREBASE_DB_URL="https:\/\/esports-mini.firebaseio.com"
+export LIVE_FIREBASE_DB_URL="https:\/\/esports-mini.firebaseio.com"
+
+export DEV_FIREBASE_PROJECT_ID="esports-mini"
+export LIVE_FIREBASE_PROJECT_ID="esports-mini"
+
+export DEV_FIREBASE_STORAGE_BUCKET="esports-mini.appspot.com"
+export LIVE_FIREBASE_STORAGE_BUCKET="esports-mini.appspot.com"
+
+export DEV_FIREBASE_MSG_SENDER_ID="881527222867"
+export LIVE_FIREBASE_MSG_SENDER_ID="881527222867"
+
+export DEV_FIREBASE_APP_ID="1:881527222867:web:bade3c851f83866ab40ca6"
+export LIVE_FIREBASE_APP_ID="1:881527222867:web:bade3c851f83866ab40ca6"
+
+export DEV_FIREBASE_MEASURE_ID="G-CB3EDVN8SG"
+export LIVE_FIREBASE_MEASURE_ID="G-CB3EDVN8SG"
+
 
 
 if [ ! -d $ESM_ADMIN_SOURCE_FOLDER ] 
