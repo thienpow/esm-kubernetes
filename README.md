@@ -107,3 +107,25 @@ kubectl scale deploy pg-master  --replicas=1
 kubectl rollout restart deployment pg-standby
 kubectl rollout restart deployment pgpool
 ```
+
+
+# script to deal with pod of pg-master
+```sh
+
+# this will retrieve the name of the pod only, no other messy detail
+kubectl get pods --selector=app=pg-master | awk 'NR>1{print $1}'
+
+# this will ssh into the pod, short sample
+kubectl exec -it <pod_name> -- /bin/sh
+
+# combine the 2 above
+kubectl exec -it "$(kubectl get pods --selector=app=pg-master | awk 'NR>1{print $1}')" -- /bin/sh
+
+# check whole disk space without going into the pod. print the detail directly to your local device's terminal
+kubectl exec -it "$(kubectl get pods --selector=app=pg-master | awk 'NR>1{print $1}')" -- /bin/df -h
+
+# finally check the PV that bound to /var/lib/postgresql/data
+kubectl exec -it "$(kubectl get pods --selector=app=pg-master | awk 'NR>1{print $1}')" -- /bin/df -h | awk 'NR==11{print}'
+
+```
+                          7.8G    228.0M      7.2G   3% /var/lib/postgresql/data

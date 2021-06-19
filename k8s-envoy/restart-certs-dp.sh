@@ -1,8 +1,9 @@
 #!/bin/sh
 
-# if new postgres ca cert is regenerated, need to run this apply-certs.sh to restart all the linked deployments.
 
-LD="$(../helper_sh/check_current_cluster.sh)" # auto check and set the value for live or dev cluster.
+# if new postgres ca cert is regenerated, need to run this restart-certs-dp.sh to restart all the linked deployments.
+
+LD="$(../helper_sh/check_current_cluster.sh $1)" # auto check and set the value for live or dev cluster.
 
 kubectl apply -f pg-ca-secret-$LD.yaml
 

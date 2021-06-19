@@ -53,7 +53,7 @@ cd ./../pgpool
 # apply all the changes to Kubernetes
 #
 cd ./../../k8s-envoy
-./restart-certs-dp.sh
+./restart-certs-dp.sh $LD
 
 
 #
