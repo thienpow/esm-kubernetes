@@ -28,7 +28,7 @@ done
 #
 # no turning back, you already decided
 #
-kubectl scale deploy pg-master  --replicas=0
+kubectl scale deploy pg-master --replicas=0
 kubectl delete pvc postgres-master-pvc
 
 linked_pv=$(kubectl get pv | awk '/postgres-master-pvc/{ print $1 }')
