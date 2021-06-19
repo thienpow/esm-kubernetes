@@ -7,17 +7,17 @@ metadata:
 data:
   pgpool.conf: |-
     listen_addresses = '*'
-    port = 9998
+    port = 9999
     socket_dir = '/var/run/pgpool'
     pcp_listen_addresses = '*'
     pcp_port = 9898
     pcp_socket_dir = '/var/run/pgpool'
     backend_hostname0 = 'pg-master'
-    backend_port0 = 25432
+    backend_port0 = 5432
     backend_weight0 = 1
     backend_flag0 = 'ALWAYS_PRIMARY|DISALLOW_TO_FAILOVER'
     backend_hostname1 = 'pg-standby'
-    backend_port1 = 25433
+    backend_port1 = 5432
     backend_weight1 = 1
     backend_flag1 = 'DISALLOW_TO_FAILOVER'
     sr_check_period = 0

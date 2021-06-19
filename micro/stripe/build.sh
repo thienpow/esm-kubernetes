@@ -19,5 +19,5 @@ docker rmi $image_name
 #
 # restart the deployment in kubernetes
 #
-kubectl apply  -f "../../k8s-envoy/esm-stripe-deployment-${LD}.yaml"
+kubectl apply  -f "../../k8s-envoy/stripe/esm-stripe-deployment-${LD}.yaml"
 kubectl rollout restart deployment esm-stripe

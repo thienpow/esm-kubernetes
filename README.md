@@ -128,4 +128,3 @@ kubectl exec -it "$(kubectl get pods --selector=app=pg-master | awk 'NR>1{print 
 kubectl exec -it "$(kubectl get pods --selector=app=pg-master | awk 'NR>1{print $1}')" -- /bin/df -h | awk 'NR==11{print}'
 
 ```
-                          7.8G    228.0M      7.2G   3% /var/lib/postgresql/data

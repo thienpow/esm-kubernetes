@@ -5,14 +5,14 @@
 -- Dumped from database version 13.3
 -- Dumped by pg_dump version 13.3
 
--- Started on 2021-06-11 22:12:21 +08
+-- Started on 2021-06-19 14:58:57 +08
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
 SET idle_in_transaction_session_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
-SELECT pg_catalog.set_config('search_path', '', false);
+SELECT pg_catalog.set_config('search_path', 'public', false);
 SET check_function_bodies = false;
 SET xmloption = content;
 SET client_min_messages = warning;
@@ -23,7 +23,7 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- TOC entry 200 (class 1259 OID 16769)
+-- TOC entry 200 (class 1259 OID 16384)
 -- Name: checker_log; Type: TABLE; Schema: public; Owner: doadmin
 --
 
@@ -43,7 +43,7 @@ CREATE TABLE public.checker_log (
 ALTER TABLE public.checker_log OWNER TO doadmin;
 
 --
--- TOC entry 201 (class 1259 OID 16780)
+-- TOC entry 201 (class 1259 OID 16395)
 -- Name: checker_log_id_seq; Type: SEQUENCE; Schema: public; Owner: doadmin
 --
 
@@ -58,7 +58,7 @@ CREATE SEQUENCE public.checker_log_id_seq
 ALTER TABLE public.checker_log_id_seq OWNER TO doadmin;
 
 --
--- TOC entry 3375 (class 0 OID 0)
+-- TOC entry 3379 (class 0 OID 0)
 -- Dependencies: 201
 -- Name: checker_log_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: doadmin
 --
@@ -67,7 +67,7 @@ ALTER SEQUENCE public.checker_log_id_seq OWNED BY public.checker_log.id;
 
 
 --
--- TOC entry 202 (class 1259 OID 16782)
+-- TOC entry 202 (class 1259 OID 16397)
 -- Name: config; Type: TABLE; Schema: public; Owner: doadmin
 --
 
@@ -88,7 +88,7 @@ CREATE TABLE public.config (
 ALTER TABLE public.config OWNER TO doadmin;
 
 --
--- TOC entry 203 (class 1259 OID 16788)
+-- TOC entry 203 (class 1259 OID 16403)
 -- Name: current_game; Type: TABLE; Schema: public; Owner: doadmin
 --
 
@@ -109,7 +109,7 @@ CREATE TABLE public.current_game (
 ALTER TABLE public.current_game OWNER TO doadmin;
 
 --
--- TOC entry 204 (class 1259 OID 16793)
+-- TOC entry 204 (class 1259 OID 16408)
 -- Name: current_game_id_seq; Type: SEQUENCE; Schema: public; Owner: doadmin
 --
 
@@ -124,7 +124,7 @@ CREATE SEQUENCE public.current_game_id_seq
 ALTER TABLE public.current_game_id_seq OWNER TO doadmin;
 
 --
--- TOC entry 3376 (class 0 OID 0)
+-- TOC entry 3380 (class 0 OID 0)
 -- Dependencies: 204
 -- Name: current_game_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: doadmin
 --
@@ -133,7 +133,7 @@ ALTER SEQUENCE public.current_game_id_seq OWNED BY public.current_game.id;
 
 
 --
--- TOC entry 205 (class 1259 OID 16795)
+-- TOC entry 205 (class 1259 OID 16410)
 -- Name: error_log; Type: TABLE; Schema: public; Owner: doadmin
 --
 
@@ -148,7 +148,7 @@ CREATE TABLE public.error_log (
 ALTER TABLE public.error_log OWNER TO doadmin;
 
 --
--- TOC entry 206 (class 1259 OID 16799)
+-- TOC entry 206 (class 1259 OID 16414)
 -- Name: error_log_id_seq; Type: SEQUENCE; Schema: public; Owner: doadmin
 --
 
@@ -163,7 +163,7 @@ CREATE SEQUENCE public.error_log_id_seq
 ALTER TABLE public.error_log_id_seq OWNER TO doadmin;
 
 --
--- TOC entry 3377 (class 0 OID 0)
+-- TOC entry 3381 (class 0 OID 0)
 -- Dependencies: 206
 -- Name: error_log_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: doadmin
 --
@@ -172,7 +172,7 @@ ALTER SEQUENCE public.error_log_id_seq OWNED BY public.error_log.id;
 
 
 --
--- TOC entry 207 (class 1259 OID 16801)
+-- TOC entry 207 (class 1259 OID 16416)
 -- Name: game; Type: TABLE; Schema: public; Owner: doadmin
 --
 
@@ -199,7 +199,7 @@ CREATE TABLE public.game (
 ALTER TABLE public.game OWNER TO doadmin;
 
 --
--- TOC entry 208 (class 1259 OID 16807)
+-- TOC entry 208 (class 1259 OID 16422)
 -- Name: game_id_seq; Type: SEQUENCE; Schema: public; Owner: doadmin
 --
 
@@ -214,7 +214,7 @@ CREATE SEQUENCE public.game_id_seq
 ALTER TABLE public.game_id_seq OWNER TO doadmin;
 
 --
--- TOC entry 3378 (class 0 OID 0)
+-- TOC entry 3382 (class 0 OID 0)
 -- Dependencies: 208
 -- Name: game_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: doadmin
 --
@@ -223,7 +223,7 @@ ALTER SEQUENCE public.game_id_seq OWNED BY public.game.id;
 
 
 --
--- TOC entry 209 (class 1259 OID 16809)
+-- TOC entry 209 (class 1259 OID 16424)
 -- Name: game_leader_rule; Type: TABLE; Schema: public; Owner: doadmin
 --
 
@@ -239,7 +239,7 @@ CREATE TABLE public.game_leader_rule (
 ALTER TABLE public.game_leader_rule OWNER TO doadmin;
 
 --
--- TOC entry 210 (class 1259 OID 16812)
+-- TOC entry 210 (class 1259 OID 16427)
 -- Name: gplayer; Type: TABLE; Schema: public; Owner: doadmin
 --
 
@@ -262,7 +262,7 @@ CREATE TABLE public.gplayer (
 ALTER TABLE public.gplayer OWNER TO doadmin;
 
 --
--- TOC entry 211 (class 1259 OID 16822)
+-- TOC entry 211 (class 1259 OID 16437)
 -- Name: gplayer_id_seq; Type: SEQUENCE; Schema: public; Owner: doadmin
 --
 
@@ -277,7 +277,7 @@ CREATE SEQUENCE public.gplayer_id_seq
 ALTER TABLE public.gplayer_id_seq OWNER TO doadmin;
 
 --
--- TOC entry 3379 (class 0 OID 0)
+-- TOC entry 3383 (class 0 OID 0)
 -- Dependencies: 211
 -- Name: gplayer_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: doadmin
 --
@@ -286,7 +286,7 @@ ALTER SEQUENCE public.gplayer_id_seq OWNED BY public.gplayer.id;
 
 
 --
--- TOC entry 212 (class 1259 OID 16824)
+-- TOC entry 212 (class 1259 OID 16439)
 -- Name: item; Type: TABLE; Schema: public; Owner: doadmin
 --
 
@@ -306,7 +306,7 @@ CREATE TABLE public.item (
 ALTER TABLE public.item OWNER TO doadmin;
 
 --
--- TOC entry 213 (class 1259 OID 16834)
+-- TOC entry 213 (class 1259 OID 16449)
 -- Name: item_id_seq; Type: SEQUENCE; Schema: public; Owner: doadmin
 --
 
@@ -321,7 +321,7 @@ CREATE SEQUENCE public.item_id_seq
 ALTER TABLE public.item_id_seq OWNER TO doadmin;
 
 --
--- TOC entry 3380 (class 0 OID 0)
+-- TOC entry 3384 (class 0 OID 0)
 -- Dependencies: 213
 -- Name: item_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: doadmin
 --
@@ -330,7 +330,7 @@ ALTER SEQUENCE public.item_id_seq OWNED BY public.item.id;
 
 
 --
--- TOC entry 214 (class 1259 OID 16836)
+-- TOC entry 214 (class 1259 OID 16451)
 -- Name: item_type; Type: TABLE; Schema: public; Owner: doadmin
 --
 
@@ -343,7 +343,7 @@ CREATE TABLE public.item_type (
 ALTER TABLE public.item_type OWNER TO doadmin;
 
 --
--- TOC entry 215 (class 1259 OID 16839)
+-- TOC entry 215 (class 1259 OID 16454)
 -- Name: prize; Type: TABLE; Schema: public; Owner: doadmin
 --
 
@@ -372,7 +372,7 @@ CREATE TABLE public.prize (
 ALTER TABLE public.prize OWNER TO doadmin;
 
 --
--- TOC entry 216 (class 1259 OID 16852)
+-- TOC entry 216 (class 1259 OID 16467)
 -- Name: prize_closed; Type: TABLE; Schema: public; Owner: doadmin
 --
 
@@ -389,7 +389,7 @@ CREATE TABLE public.prize_closed (
 ALTER TABLE public.prize_closed OWNER TO doadmin;
 
 --
--- TOC entry 217 (class 1259 OID 16857)
+-- TOC entry 217 (class 1259 OID 16472)
 -- Name: prize_closed_id_seq; Type: SEQUENCE; Schema: public; Owner: doadmin
 --
 
@@ -404,7 +404,7 @@ CREATE SEQUENCE public.prize_closed_id_seq
 ALTER TABLE public.prize_closed_id_seq OWNER TO doadmin;
 
 --
--- TOC entry 3381 (class 0 OID 0)
+-- TOC entry 3385 (class 0 OID 0)
 -- Dependencies: 217
 -- Name: prize_closed_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: doadmin
 --
@@ -413,7 +413,7 @@ ALTER SEQUENCE public.prize_closed_id_seq OWNED BY public.prize_closed.id;
 
 
 --
--- TOC entry 218 (class 1259 OID 16859)
+-- TOC entry 218 (class 1259 OID 16474)
 -- Name: prize_id_seq; Type: SEQUENCE; Schema: public; Owner: doadmin
 --
 
@@ -428,7 +428,7 @@ CREATE SEQUENCE public.prize_id_seq
 ALTER TABLE public.prize_id_seq OWNER TO doadmin;
 
 --
--- TOC entry 3382 (class 0 OID 0)
+-- TOC entry 3386 (class 0 OID 0)
 -- Dependencies: 218
 -- Name: prize_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: doadmin
 --
@@ -437,7 +437,7 @@ ALTER SEQUENCE public.prize_id_seq OWNED BY public.prize.id;
 
 
 --
--- TOC entry 219 (class 1259 OID 16861)
+-- TOC entry 219 (class 1259 OID 16476)
 -- Name: prize_pool; Type: TABLE; Schema: public; Owner: doadmin
 --
 
@@ -457,7 +457,7 @@ CREATE TABLE public.prize_pool (
 ALTER TABLE public.prize_pool OWNER TO doadmin;
 
 --
--- TOC entry 220 (class 1259 OID 16869)
+-- TOC entry 220 (class 1259 OID 16484)
 -- Name: prize_pool_id_seq; Type: SEQUENCE; Schema: public; Owner: doadmin
 --
 
@@ -472,7 +472,7 @@ CREATE SEQUENCE public.prize_pool_id_seq
 ALTER TABLE public.prize_pool_id_seq OWNER TO doadmin;
 
 --
--- TOC entry 3383 (class 0 OID 0)
+-- TOC entry 3387 (class 0 OID 0)
 -- Dependencies: 220
 -- Name: prize_pool_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: doadmin
 --
@@ -481,7 +481,7 @@ ALTER SEQUENCE public.prize_pool_id_seq OWNED BY public.prize_pool.id;
 
 
 --
--- TOC entry 221 (class 1259 OID 16871)
+-- TOC entry 221 (class 1259 OID 16486)
 -- Name: prize_tour; Type: TABLE; Schema: public; Owner: doadmin
 --
 
@@ -496,7 +496,7 @@ CREATE TABLE public.prize_tour (
 ALTER TABLE public.prize_tour OWNER TO doadmin;
 
 --
--- TOC entry 222 (class 1259 OID 16874)
+-- TOC entry 222 (class 1259 OID 16489)
 -- Name: prize_tour_id_seq; Type: SEQUENCE; Schema: public; Owner: doadmin
 --
 
@@ -511,7 +511,7 @@ CREATE SEQUENCE public.prize_tour_id_seq
 ALTER TABLE public.prize_tour_id_seq OWNER TO doadmin;
 
 --
--- TOC entry 3384 (class 0 OID 0)
+-- TOC entry 3388 (class 0 OID 0)
 -- Dependencies: 222
 -- Name: prize_tour_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: doadmin
 --
@@ -520,7 +520,7 @@ ALTER SEQUENCE public.prize_tour_id_seq OWNED BY public.prize_tour.id;
 
 
 --
--- TOC entry 223 (class 1259 OID 16876)
+-- TOC entry 223 (class 1259 OID 16491)
 -- Name: prize_type; Type: TABLE; Schema: public; Owner: doadmin
 --
 
@@ -533,7 +533,7 @@ CREATE TABLE public.prize_type (
 ALTER TABLE public.prize_type OWNER TO doadmin;
 
 --
--- TOC entry 224 (class 1259 OID 16884)
+-- TOC entry 224 (class 1259 OID 16494)
 -- Name: rank; Type: TABLE; Schema: public; Owner: doadmin
 --
 
@@ -549,7 +549,7 @@ CREATE TABLE public.rank (
 ALTER TABLE public.rank OWNER TO doadmin;
 
 --
--- TOC entry 225 (class 1259 OID 16887)
+-- TOC entry 225 (class 1259 OID 16497)
 -- Name: shop_buy; Type: TABLE; Schema: public; Owner: doadmin
 --
 
@@ -568,7 +568,7 @@ CREATE TABLE public.shop_buy (
 ALTER TABLE public.shop_buy OWNER TO doadmin;
 
 --
--- TOC entry 226 (class 1259 OID 16892)
+-- TOC entry 226 (class 1259 OID 16502)
 -- Name: shop_buy_id_seq; Type: SEQUENCE; Schema: public; Owner: doadmin
 --
 
@@ -583,7 +583,7 @@ CREATE SEQUENCE public.shop_buy_id_seq
 ALTER TABLE public.shop_buy_id_seq OWNER TO doadmin;
 
 --
--- TOC entry 3385 (class 0 OID 0)
+-- TOC entry 3389 (class 0 OID 0)
 -- Dependencies: 226
 -- Name: shop_buy_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: doadmin
 --
@@ -592,7 +592,7 @@ ALTER SEQUENCE public.shop_buy_id_seq OWNED BY public.shop_buy.id;
 
 
 --
--- TOC entry 227 (class 1259 OID 16894)
+-- TOC entry 227 (class 1259 OID 16504)
 -- Name: spinner_extra_log; Type: TABLE; Schema: public; Owner: doadmin
 --
 
@@ -607,7 +607,7 @@ CREATE TABLE public.spinner_extra_log (
 ALTER TABLE public.spinner_extra_log OWNER TO doadmin;
 
 --
--- TOC entry 228 (class 1259 OID 16898)
+-- TOC entry 228 (class 1259 OID 16508)
 -- Name: spinner_extra_log_id_seq; Type: SEQUENCE; Schema: public; Owner: doadmin
 --
 
@@ -622,7 +622,7 @@ CREATE SEQUENCE public.spinner_extra_log_id_seq
 ALTER TABLE public.spinner_extra_log_id_seq OWNER TO doadmin;
 
 --
--- TOC entry 3386 (class 0 OID 0)
+-- TOC entry 3390 (class 0 OID 0)
 -- Dependencies: 228
 -- Name: spinner_extra_log_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: doadmin
 --
@@ -631,7 +631,7 @@ ALTER SEQUENCE public.spinner_extra_log_id_seq OWNED BY public.spinner_extra_log
 
 
 --
--- TOC entry 229 (class 1259 OID 16900)
+-- TOC entry 229 (class 1259 OID 16510)
 -- Name: spinner_log; Type: TABLE; Schema: public; Owner: doadmin
 --
 
@@ -652,7 +652,7 @@ CREATE TABLE public.spinner_log (
 ALTER TABLE public.spinner_log OWNER TO doadmin;
 
 --
--- TOC entry 230 (class 1259 OID 16909)
+-- TOC entry 230 (class 1259 OID 16519)
 -- Name: spinner_log_id_seq; Type: SEQUENCE; Schema: public; Owner: doadmin
 --
 
@@ -667,7 +667,7 @@ CREATE SEQUENCE public.spinner_log_id_seq
 ALTER TABLE public.spinner_log_id_seq OWNER TO doadmin;
 
 --
--- TOC entry 3387 (class 0 OID 0)
+-- TOC entry 3391 (class 0 OID 0)
 -- Dependencies: 230
 -- Name: spinner_log_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: doadmin
 --
@@ -676,7 +676,7 @@ ALTER SEQUENCE public.spinner_log_id_seq OWNED BY public.spinner_log.id;
 
 
 --
--- TOC entry 231 (class 1259 OID 16911)
+-- TOC entry 231 (class 1259 OID 16521)
 -- Name: spinner_rule; Type: TABLE; Schema: public; Owner: doadmin
 --
 
@@ -691,7 +691,7 @@ CREATE TABLE public.spinner_rule (
 ALTER TABLE public.spinner_rule OWNER TO doadmin;
 
 --
--- TOC entry 232 (class 1259 OID 16914)
+-- TOC entry 232 (class 1259 OID 16524)
 -- Name: spinner_rule_id_seq; Type: SEQUENCE; Schema: public; Owner: doadmin
 --
 
@@ -707,7 +707,7 @@ CREATE SEQUENCE public.spinner_rule_id_seq
 ALTER TABLE public.spinner_rule_id_seq OWNER TO doadmin;
 
 --
--- TOC entry 3388 (class 0 OID 0)
+-- TOC entry 3392 (class 0 OID 0)
 -- Dependencies: 232
 -- Name: spinner_rule_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: doadmin
 --
@@ -716,7 +716,7 @@ ALTER SEQUENCE public.spinner_rule_id_seq OWNED BY public.spinner_rule.id;
 
 
 --
--- TOC entry 233 (class 1259 OID 16916)
+-- TOC entry 233 (class 1259 OID 16526)
 -- Name: spinner_win_type; Type: TABLE; Schema: public; Owner: doadmin
 --
 
@@ -729,7 +729,7 @@ CREATE TABLE public.spinner_win_type (
 ALTER TABLE public.spinner_win_type OWNER TO doadmin;
 
 --
--- TOC entry 234 (class 1259 OID 16919)
+-- TOC entry 234 (class 1259 OID 16529)
 -- Name: status_progress_type; Type: TABLE; Schema: public; Owner: doadmin
 --
 
@@ -742,7 +742,7 @@ CREATE TABLE public.status_progress_type (
 ALTER TABLE public.status_progress_type OWNER TO doadmin;
 
 --
--- TOC entry 235 (class 1259 OID 16922)
+-- TOC entry 235 (class 1259 OID 16532)
 -- Name: status_type; Type: TABLE; Schema: public; Owner: doadmin
 --
 
@@ -755,7 +755,7 @@ CREATE TABLE public.status_type (
 ALTER TABLE public.status_type OWNER TO doadmin;
 
 --
--- TOC entry 236 (class 1259 OID 16925)
+-- TOC entry 236 (class 1259 OID 16535)
 -- Name: subscription; Type: TABLE; Schema: public; Owner: doadmin
 --
 
@@ -780,7 +780,7 @@ CREATE TABLE public.subscription (
 ALTER TABLE public.subscription OWNER TO doadmin;
 
 --
--- TOC entry 237 (class 1259 OID 16933)
+-- TOC entry 237 (class 1259 OID 16543)
 -- Name: subscription_id_seq; Type: SEQUENCE; Schema: public; Owner: doadmin
 --
 
@@ -795,7 +795,7 @@ CREATE SEQUENCE public.subscription_id_seq
 ALTER TABLE public.subscription_id_seq OWNER TO doadmin;
 
 --
--- TOC entry 3389 (class 0 OID 0)
+-- TOC entry 3393 (class 0 OID 0)
 -- Dependencies: 237
 -- Name: subscription_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: doadmin
 --
@@ -804,7 +804,7 @@ ALTER SEQUENCE public.subscription_id_seq OWNED BY public.subscription.id;
 
 
 --
--- TOC entry 238 (class 1259 OID 16935)
+-- TOC entry 238 (class 1259 OID 16545)
 -- Name: subscription_type; Type: TABLE; Schema: public; Owner: doadmin
 --
 
@@ -817,7 +817,7 @@ CREATE TABLE public.subscription_type (
 ALTER TABLE public.subscription_type OWNER TO doadmin;
 
 --
--- TOC entry 239 (class 1259 OID 16938)
+-- TOC entry 239 (class 1259 OID 16548)
 -- Name: timezones; Type: TABLE; Schema: public; Owner: doadmin
 --
 
@@ -832,7 +832,7 @@ CREATE TABLE public.timezones (
 ALTER TABLE public.timezones OWNER TO doadmin;
 
 --
--- TOC entry 240 (class 1259 OID 16941)
+-- TOC entry 240 (class 1259 OID 16551)
 -- Name: timezones_id_seq; Type: SEQUENCE; Schema: public; Owner: doadmin
 --
 
@@ -848,7 +848,7 @@ CREATE SEQUENCE public.timezones_id_seq
 ALTER TABLE public.timezones_id_seq OWNER TO doadmin;
 
 --
--- TOC entry 3390 (class 0 OID 0)
+-- TOC entry 3394 (class 0 OID 0)
 -- Dependencies: 240
 -- Name: timezones_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: doadmin
 --
@@ -857,7 +857,7 @@ ALTER SEQUENCE public.timezones_id_seq OWNED BY public.timezones.id;
 
 
 --
--- TOC entry 241 (class 1259 OID 16943)
+-- TOC entry 241 (class 1259 OID 16553)
 -- Name: tour_set; Type: TABLE; Schema: public; Owner: doadmin
 --
 
@@ -872,7 +872,7 @@ CREATE TABLE public.tour_set (
 ALTER TABLE public.tour_set OWNER TO doadmin;
 
 --
--- TOC entry 242 (class 1259 OID 16946)
+-- TOC entry 242 (class 1259 OID 16556)
 -- Name: tour_set_id_seq; Type: SEQUENCE; Schema: public; Owner: doadmin
 --
 
@@ -887,7 +887,7 @@ CREATE SEQUENCE public.tour_set_id_seq
 ALTER TABLE public.tour_set_id_seq OWNER TO doadmin;
 
 --
--- TOC entry 3391 (class 0 OID 0)
+-- TOC entry 3395 (class 0 OID 0)
 -- Dependencies: 242
 -- Name: tour_set_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: doadmin
 --
@@ -896,7 +896,7 @@ ALTER SEQUENCE public.tour_set_id_seq OWNED BY public.tour_set.id;
 
 
 --
--- TOC entry 243 (class 1259 OID 16948)
+-- TOC entry 243 (class 1259 OID 16558)
 -- Name: tournament; Type: TABLE; Schema: public; Owner: doadmin
 --
 
@@ -910,7 +910,7 @@ CREATE TABLE public.tournament (
 ALTER TABLE public.tournament OWNER TO doadmin;
 
 --
--- TOC entry 244 (class 1259 OID 16951)
+-- TOC entry 244 (class 1259 OID 16561)
 -- Name: tournament_id_seq; Type: SEQUENCE; Schema: public; Owner: doadmin
 --
 
@@ -925,7 +925,7 @@ CREATE SEQUENCE public.tournament_id_seq
 ALTER TABLE public.tournament_id_seq OWNER TO doadmin;
 
 --
--- TOC entry 3392 (class 0 OID 0)
+-- TOC entry 3396 (class 0 OID 0)
 -- Dependencies: 244
 -- Name: tournament_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: doadmin
 --
@@ -934,7 +934,7 @@ ALTER SEQUENCE public.tournament_id_seq OWNED BY public.tournament.id;
 
 
 --
--- TOC entry 245 (class 1259 OID 16953)
+-- TOC entry 245 (class 1259 OID 16563)
 -- Name: tournament_set; Type: TABLE; Schema: public; Owner: doadmin
 --
 
@@ -950,7 +950,7 @@ CREATE TABLE public.tournament_set (
 ALTER TABLE public.tournament_set OWNER TO doadmin;
 
 --
--- TOC entry 246 (class 1259 OID 16957)
+-- TOC entry 246 (class 1259 OID 16567)
 -- Name: tournament_set_game_rule; Type: TABLE; Schema: public; Owner: doadmin
 --
 
@@ -968,7 +968,7 @@ CREATE TABLE public.tournament_set_game_rule (
 ALTER TABLE public.tournament_set_game_rule OWNER TO doadmin;
 
 --
--- TOC entry 247 (class 1259 OID 16961)
+-- TOC entry 247 (class 1259 OID 16571)
 -- Name: tournament_set_game_rule_id_seq; Type: SEQUENCE; Schema: public; Owner: doadmin
 --
 
@@ -983,7 +983,7 @@ CREATE SEQUENCE public.tournament_set_game_rule_id_seq
 ALTER TABLE public.tournament_set_game_rule_id_seq OWNER TO doadmin;
 
 --
--- TOC entry 3393 (class 0 OID 0)
+-- TOC entry 3397 (class 0 OID 0)
 -- Dependencies: 247
 -- Name: tournament_set_game_rule_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: doadmin
 --
@@ -992,7 +992,7 @@ ALTER SEQUENCE public.tournament_set_game_rule_id_seq OWNED BY public.tournament
 
 
 --
--- TOC entry 248 (class 1259 OID 16963)
+-- TOC entry 248 (class 1259 OID 16573)
 -- Name: tournament_set_id_seq; Type: SEQUENCE; Schema: public; Owner: doadmin
 --
 
@@ -1007,7 +1007,7 @@ CREATE SEQUENCE public.tournament_set_id_seq
 ALTER TABLE public.tournament_set_id_seq OWNER TO doadmin;
 
 --
--- TOC entry 3394 (class 0 OID 0)
+-- TOC entry 3398 (class 0 OID 0)
 -- Dependencies: 248
 -- Name: tournament_set_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: doadmin
 --
@@ -1016,7 +1016,7 @@ ALTER SEQUENCE public.tournament_set_id_seq OWNED BY public.tournament_set.id;
 
 
 --
--- TOC entry 249 (class 1259 OID 16965)
+-- TOC entry 249 (class 1259 OID 16575)
 -- Name: user; Type: TABLE; Schema: public; Owner: doadmin
 --
 
@@ -1067,7 +1067,7 @@ CREATE TABLE public."user" (
 ALTER TABLE public."user" OWNER TO doadmin;
 
 --
--- TOC entry 250 (class 1259 OID 17001)
+-- TOC entry 250 (class 1259 OID 16611)
 -- Name: user_admin_change_log; Type: TABLE; Schema: public; Owner: doadmin
 --
 
@@ -1086,7 +1086,7 @@ CREATE TABLE public.user_admin_change_log (
 ALTER TABLE public.user_admin_change_log OWNER TO doadmin;
 
 --
--- TOC entry 251 (class 1259 OID 17004)
+-- TOC entry 251 (class 1259 OID 16614)
 -- Name: user_admin_change_log_id_seq; Type: SEQUENCE; Schema: public; Owner: doadmin
 --
 
@@ -1101,7 +1101,7 @@ CREATE SEQUENCE public.user_admin_change_log_id_seq
 ALTER TABLE public.user_admin_change_log_id_seq OWNER TO doadmin;
 
 --
--- TOC entry 3395 (class 0 OID 0)
+-- TOC entry 3399 (class 0 OID 0)
 -- Dependencies: 251
 -- Name: user_admin_change_log_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: doadmin
 --
@@ -1110,7 +1110,7 @@ ALTER SEQUENCE public.user_admin_change_log_id_seq OWNED BY public.user_admin_ch
 
 
 --
--- TOC entry 252 (class 1259 OID 17006)
+-- TOC entry 252 (class 1259 OID 16616)
 -- Name: user_id_seq; Type: SEQUENCE; Schema: public; Owner: doadmin
 --
 
@@ -1125,7 +1125,7 @@ CREATE SEQUENCE public.user_id_seq
 ALTER TABLE public.user_id_seq OWNER TO doadmin;
 
 --
--- TOC entry 3396 (class 0 OID 0)
+-- TOC entry 3400 (class 0 OID 0)
 -- Dependencies: 252
 -- Name: user_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: doadmin
 --
@@ -1134,7 +1134,7 @@ ALTER SEQUENCE public.user_id_seq OWNED BY public."user".id;
 
 
 --
--- TOC entry 253 (class 1259 OID 17008)
+-- TOC entry 253 (class 1259 OID 16618)
 -- Name: user_invites; Type: TABLE; Schema: public; Owner: doadmin
 --
 
@@ -1149,7 +1149,7 @@ CREATE TABLE public.user_invites (
 ALTER TABLE public.user_invites OWNER TO doadmin;
 
 --
--- TOC entry 254 (class 1259 OID 17011)
+-- TOC entry 254 (class 1259 OID 16621)
 -- Name: user_invites_id_seq; Type: SEQUENCE; Schema: public; Owner: doadmin
 --
 
@@ -1164,7 +1164,7 @@ CREATE SEQUENCE public.user_invites_id_seq
 ALTER TABLE public.user_invites_id_seq OWNER TO doadmin;
 
 --
--- TOC entry 3397 (class 0 OID 0)
+-- TOC entry 3401 (class 0 OID 0)
 -- Dependencies: 254
 -- Name: user_invites_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: doadmin
 --
@@ -1173,7 +1173,7 @@ ALTER SEQUENCE public.user_invites_id_seq OWNED BY public.user_invites.id;
 
 
 --
--- TOC entry 255 (class 1259 OID 17013)
+-- TOC entry 255 (class 1259 OID 16623)
 -- Name: user_status_type; Type: TABLE; Schema: public; Owner: doadmin
 --
 
@@ -1186,7 +1186,7 @@ CREATE TABLE public.user_status_type (
 ALTER TABLE public.user_status_type OWNER TO doadmin;
 
 --
--- TOC entry 256 (class 1259 OID 17016)
+-- TOC entry 256 (class 1259 OID 16626)
 -- Name: winner; Type: TABLE; Schema: public; Owner: doadmin
 --
 
@@ -1204,7 +1204,7 @@ CREATE TABLE public.winner (
 ALTER TABLE public.winner OWNER TO doadmin;
 
 --
--- TOC entry 257 (class 1259 OID 17023)
+-- TOC entry 257 (class 1259 OID 16633)
 -- Name: winner_change_log; Type: TABLE; Schema: public; Owner: doadmin
 --
 
@@ -1223,7 +1223,7 @@ CREATE TABLE public.winner_change_log (
 ALTER TABLE public.winner_change_log OWNER TO doadmin;
 
 --
--- TOC entry 258 (class 1259 OID 17029)
+-- TOC entry 258 (class 1259 OID 16639)
 -- Name: winner_change_log_id_seq; Type: SEQUENCE; Schema: public; Owner: doadmin
 --
 
@@ -1238,7 +1238,7 @@ CREATE SEQUENCE public.winner_change_log_id_seq
 ALTER TABLE public.winner_change_log_id_seq OWNER TO doadmin;
 
 --
--- TOC entry 3398 (class 0 OID 0)
+-- TOC entry 3402 (class 0 OID 0)
 -- Dependencies: 258
 -- Name: winner_change_log_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: doadmin
 --
@@ -1247,7 +1247,7 @@ ALTER SEQUENCE public.winner_change_log_id_seq OWNED BY public.winner_change_log
 
 
 --
--- TOC entry 259 (class 1259 OID 17031)
+-- TOC entry 259 (class 1259 OID 16641)
 -- Name: winner_id_seq; Type: SEQUENCE; Schema: public; Owner: doadmin
 --
 
@@ -1262,7 +1262,7 @@ CREATE SEQUENCE public.winner_id_seq
 ALTER TABLE public.winner_id_seq OWNER TO doadmin;
 
 --
--- TOC entry 3399 (class 0 OID 0)
+-- TOC entry 3403 (class 0 OID 0)
 -- Dependencies: 259
 -- Name: winner_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: doadmin
 --
@@ -1271,7 +1271,7 @@ ALTER SEQUENCE public.winner_id_seq OWNED BY public.winner.id;
 
 
 --
--- TOC entry 260 (class 1259 OID 17033)
+-- TOC entry 260 (class 1259 OID 16643)
 -- Name: winner_status_type; Type: TABLE; Schema: public; Owner: doadmin
 --
 
@@ -1284,207 +1284,207 @@ CREATE TABLE public.winner_status_type (
 ALTER TABLE public.winner_status_type OWNER TO doadmin;
 
 --
--- TOC entry 3053 (class 2604 OID 17036)
+-- TOC entry 3053 (class 2604 OID 16646)
 -- Name: checker_log id; Type: DEFAULT; Schema: public; Owner: doadmin
 --
 
-ALTER TABLE ONLY public.checker_log ALTER COLUMN id SET DEFAULT nextval('public.checker_log_id_seq'::regclass);
+ALTER TABLE ONLY public.checker_log ALTER COLUMN id SET DEFAULT nextval('checker_log_id_seq'::regclass);
 
 
 --
--- TOC entry 3056 (class 2604 OID 17037)
+-- TOC entry 3056 (class 2604 OID 16647)
 -- Name: current_game id; Type: DEFAULT; Schema: public; Owner: doadmin
 --
 
-ALTER TABLE ONLY public.current_game ALTER COLUMN id SET DEFAULT nextval('public.current_game_id_seq'::regclass);
+ALTER TABLE ONLY public.current_game ALTER COLUMN id SET DEFAULT nextval('current_game_id_seq'::regclass);
 
 
 --
--- TOC entry 3058 (class 2604 OID 17038)
+-- TOC entry 3058 (class 2604 OID 16648)
 -- Name: error_log id; Type: DEFAULT; Schema: public; Owner: doadmin
 --
 
-ALTER TABLE ONLY public.error_log ALTER COLUMN id SET DEFAULT nextval('public.error_log_id_seq'::regclass);
+ALTER TABLE ONLY public.error_log ALTER COLUMN id SET DEFAULT nextval('error_log_id_seq'::regclass);
 
 
 --
--- TOC entry 3059 (class 2604 OID 17039)
+-- TOC entry 3059 (class 2604 OID 16649)
 -- Name: game id; Type: DEFAULT; Schema: public; Owner: doadmin
 --
 
-ALTER TABLE ONLY public.game ALTER COLUMN id SET DEFAULT nextval('public.game_id_seq'::regclass);
+ALTER TABLE ONLY public.game ALTER COLUMN id SET DEFAULT nextval('game_id_seq'::regclass);
 
 
 --
--- TOC entry 3067 (class 2604 OID 17040)
+-- TOC entry 3067 (class 2604 OID 16650)
 -- Name: gplayer id; Type: DEFAULT; Schema: public; Owner: doadmin
 --
 
-ALTER TABLE ONLY public.gplayer ALTER COLUMN id SET DEFAULT nextval('public.gplayer_id_seq'::regclass);
+ALTER TABLE ONLY public.gplayer ALTER COLUMN id SET DEFAULT nextval('gplayer_id_seq'::regclass);
 
 
 --
--- TOC entry 3072 (class 2604 OID 17041)
+-- TOC entry 3072 (class 2604 OID 16651)
 -- Name: item id; Type: DEFAULT; Schema: public; Owner: doadmin
 --
 
-ALTER TABLE ONLY public.item ALTER COLUMN id SET DEFAULT nextval('public.item_id_seq'::regclass);
+ALTER TABLE ONLY public.item ALTER COLUMN id SET DEFAULT nextval('item_id_seq'::regclass);
 
 
 --
--- TOC entry 3080 (class 2604 OID 17042)
+-- TOC entry 3080 (class 2604 OID 16652)
 -- Name: prize id; Type: DEFAULT; Schema: public; Owner: doadmin
 --
 
-ALTER TABLE ONLY public.prize ALTER COLUMN id SET DEFAULT nextval('public.prize_id_seq'::regclass);
+ALTER TABLE ONLY public.prize ALTER COLUMN id SET DEFAULT nextval('prize_id_seq'::regclass);
 
 
 --
--- TOC entry 3083 (class 2604 OID 17043)
+-- TOC entry 3083 (class 2604 OID 16653)
 -- Name: prize_closed id; Type: DEFAULT; Schema: public; Owner: doadmin
 --
 
-ALTER TABLE ONLY public.prize_closed ALTER COLUMN id SET DEFAULT nextval('public.prize_closed_id_seq'::regclass);
+ALTER TABLE ONLY public.prize_closed ALTER COLUMN id SET DEFAULT nextval('prize_closed_id_seq'::regclass);
 
 
 --
--- TOC entry 3089 (class 2604 OID 17044)
+-- TOC entry 3089 (class 2604 OID 16654)
 -- Name: prize_pool id; Type: DEFAULT; Schema: public; Owner: doadmin
 --
 
-ALTER TABLE ONLY public.prize_pool ALTER COLUMN id SET DEFAULT nextval('public.prize_pool_id_seq'::regclass);
+ALTER TABLE ONLY public.prize_pool ALTER COLUMN id SET DEFAULT nextval('prize_pool_id_seq'::regclass);
 
 
 --
--- TOC entry 3090 (class 2604 OID 17045)
+-- TOC entry 3090 (class 2604 OID 16655)
 -- Name: prize_tour id; Type: DEFAULT; Schema: public; Owner: doadmin
 --
 
-ALTER TABLE ONLY public.prize_tour ALTER COLUMN id SET DEFAULT nextval('public.prize_tour_id_seq'::regclass);
+ALTER TABLE ONLY public.prize_tour ALTER COLUMN id SET DEFAULT nextval('prize_tour_id_seq'::regclass);
 
 
 --
--- TOC entry 3093 (class 2604 OID 17047)
+-- TOC entry 3093 (class 2604 OID 16656)
 -- Name: shop_buy id; Type: DEFAULT; Schema: public; Owner: doadmin
 --
 
-ALTER TABLE ONLY public.shop_buy ALTER COLUMN id SET DEFAULT nextval('public.shop_buy_id_seq'::regclass);
+ALTER TABLE ONLY public.shop_buy ALTER COLUMN id SET DEFAULT nextval('shop_buy_id_seq'::regclass);
 
 
 --
--- TOC entry 3095 (class 2604 OID 17048)
+-- TOC entry 3095 (class 2604 OID 16657)
 -- Name: spinner_extra_log id; Type: DEFAULT; Schema: public; Owner: doadmin
 --
 
-ALTER TABLE ONLY public.spinner_extra_log ALTER COLUMN id SET DEFAULT nextval('public.spinner_extra_log_id_seq'::regclass);
+ALTER TABLE ONLY public.spinner_extra_log ALTER COLUMN id SET DEFAULT nextval('spinner_extra_log_id_seq'::regclass);
 
 
 --
--- TOC entry 3102 (class 2604 OID 17049)
+-- TOC entry 3102 (class 2604 OID 16658)
 -- Name: spinner_log id; Type: DEFAULT; Schema: public; Owner: doadmin
 --
 
-ALTER TABLE ONLY public.spinner_log ALTER COLUMN id SET DEFAULT nextval('public.spinner_log_id_seq'::regclass);
+ALTER TABLE ONLY public.spinner_log ALTER COLUMN id SET DEFAULT nextval('spinner_log_id_seq'::regclass);
 
 
 --
--- TOC entry 3103 (class 2604 OID 17050)
+-- TOC entry 3103 (class 2604 OID 16659)
 -- Name: spinner_rule id; Type: DEFAULT; Schema: public; Owner: doadmin
 --
 
-ALTER TABLE ONLY public.spinner_rule ALTER COLUMN id SET DEFAULT nextval('public.spinner_rule_id_seq'::regclass);
+ALTER TABLE ONLY public.spinner_rule ALTER COLUMN id SET DEFAULT nextval('spinner_rule_id_seq'::regclass);
 
 
 --
--- TOC entry 3106 (class 2604 OID 17051)
+-- TOC entry 3106 (class 2604 OID 16660)
 -- Name: subscription id; Type: DEFAULT; Schema: public; Owner: doadmin
 --
 
-ALTER TABLE ONLY public.subscription ALTER COLUMN id SET DEFAULT nextval('public.subscription_id_seq'::regclass);
+ALTER TABLE ONLY public.subscription ALTER COLUMN id SET DEFAULT nextval('subscription_id_seq'::regclass);
 
 
 --
--- TOC entry 3107 (class 2604 OID 17052)
+-- TOC entry 3107 (class 2604 OID 16661)
 -- Name: timezones id; Type: DEFAULT; Schema: public; Owner: doadmin
 --
 
-ALTER TABLE ONLY public.timezones ALTER COLUMN id SET DEFAULT nextval('public.timezones_id_seq'::regclass);
+ALTER TABLE ONLY public.timezones ALTER COLUMN id SET DEFAULT nextval('timezones_id_seq'::regclass);
 
 
 --
--- TOC entry 3108 (class 2604 OID 17053)
+-- TOC entry 3108 (class 2604 OID 16662)
 -- Name: tour_set id; Type: DEFAULT; Schema: public; Owner: doadmin
 --
 
-ALTER TABLE ONLY public.tour_set ALTER COLUMN id SET DEFAULT nextval('public.tour_set_id_seq'::regclass);
+ALTER TABLE ONLY public.tour_set ALTER COLUMN id SET DEFAULT nextval('tour_set_id_seq'::regclass);
 
 
 --
--- TOC entry 3109 (class 2604 OID 17054)
+-- TOC entry 3109 (class 2604 OID 16663)
 -- Name: tournament id; Type: DEFAULT; Schema: public; Owner: doadmin
 --
 
-ALTER TABLE ONLY public.tournament ALTER COLUMN id SET DEFAULT nextval('public.tournament_id_seq'::regclass);
+ALTER TABLE ONLY public.tournament ALTER COLUMN id SET DEFAULT nextval('tournament_id_seq'::regclass);
 
 
 --
--- TOC entry 3111 (class 2604 OID 17055)
+-- TOC entry 3111 (class 2604 OID 16664)
 -- Name: tournament_set id; Type: DEFAULT; Schema: public; Owner: doadmin
 --
 
-ALTER TABLE ONLY public.tournament_set ALTER COLUMN id SET DEFAULT nextval('public.tournament_set_id_seq'::regclass);
+ALTER TABLE ONLY public.tournament_set ALTER COLUMN id SET DEFAULT nextval('tournament_set_id_seq'::regclass);
 
 
 --
--- TOC entry 3113 (class 2604 OID 17056)
+-- TOC entry 3113 (class 2604 OID 16665)
 -- Name: tournament_set_game_rule id; Type: DEFAULT; Schema: public; Owner: doadmin
 --
 
-ALTER TABLE ONLY public.tournament_set_game_rule ALTER COLUMN id SET DEFAULT nextval('public.tournament_set_game_rule_id_seq'::regclass);
+ALTER TABLE ONLY public.tournament_set_game_rule ALTER COLUMN id SET DEFAULT nextval('tournament_set_game_rule_id_seq'::regclass);
 
 
 --
--- TOC entry 3144 (class 2604 OID 17057)
+-- TOC entry 3144 (class 2604 OID 16666)
 -- Name: user id; Type: DEFAULT; Schema: public; Owner: doadmin
 --
 
-ALTER TABLE ONLY public."user" ALTER COLUMN id SET DEFAULT nextval('public.user_id_seq'::regclass);
+ALTER TABLE ONLY public."user" ALTER COLUMN id SET DEFAULT nextval('user_id_seq'::regclass);
 
 
 --
--- TOC entry 3145 (class 2604 OID 17058)
+-- TOC entry 3145 (class 2604 OID 16667)
 -- Name: user_admin_change_log id; Type: DEFAULT; Schema: public; Owner: doadmin
 --
 
-ALTER TABLE ONLY public.user_admin_change_log ALTER COLUMN id SET DEFAULT nextval('public.user_admin_change_log_id_seq'::regclass);
+ALTER TABLE ONLY public.user_admin_change_log ALTER COLUMN id SET DEFAULT nextval('user_admin_change_log_id_seq'::regclass);
 
 
 --
--- TOC entry 3146 (class 2604 OID 17059)
+-- TOC entry 3146 (class 2604 OID 16668)
 -- Name: user_invites id; Type: DEFAULT; Schema: public; Owner: doadmin
 --
 
-ALTER TABLE ONLY public.user_invites ALTER COLUMN id SET DEFAULT nextval('public.user_invites_id_seq'::regclass);
+ALTER TABLE ONLY public.user_invites ALTER COLUMN id SET DEFAULT nextval('user_invites_id_seq'::regclass);
 
 
 --
--- TOC entry 3151 (class 2604 OID 17060)
+-- TOC entry 3151 (class 2604 OID 16669)
 -- Name: winner id; Type: DEFAULT; Schema: public; Owner: doadmin
 --
 
-ALTER TABLE ONLY public.winner ALTER COLUMN id SET DEFAULT nextval('public.winner_id_seq'::regclass);
+ALTER TABLE ONLY public.winner ALTER COLUMN id SET DEFAULT nextval('winner_id_seq'::regclass);
 
 
 --
--- TOC entry 3152 (class 2604 OID 17061)
+-- TOC entry 3152 (class 2604 OID 16670)
 -- Name: winner_change_log id; Type: DEFAULT; Schema: public; Owner: doadmin
 --
 
-ALTER TABLE ONLY public.winner_change_log ALTER COLUMN id SET DEFAULT nextval('public.winner_change_log_id_seq'::regclass);
+ALTER TABLE ONLY public.winner_change_log ALTER COLUMN id SET DEFAULT nextval('winner_change_log_id_seq'::regclass);
 
 
 --
--- TOC entry 3154 (class 2606 OID 17064)
+-- TOC entry 3154 (class 2606 OID 16672)
 -- Name: checker_log checker_log_pkey; Type: CONSTRAINT; Schema: public; Owner: doadmin
 --
 
@@ -1493,7 +1493,7 @@ ALTER TABLE ONLY public.checker_log
 
 
 --
--- TOC entry 3156 (class 2606 OID 17066)
+-- TOC entry 3156 (class 2606 OID 16674)
 -- Name: config config_pkey; Type: CONSTRAINT; Schema: public; Owner: doadmin
 --
 
@@ -1502,7 +1502,7 @@ ALTER TABLE ONLY public.config
 
 
 --
--- TOC entry 3158 (class 2606 OID 17068)
+-- TOC entry 3158 (class 2606 OID 16676)
 -- Name: current_game current_game_pkey; Type: CONSTRAINT; Schema: public; Owner: doadmin
 --
 
@@ -1511,7 +1511,7 @@ ALTER TABLE ONLY public.current_game
 
 
 --
--- TOC entry 3160 (class 2606 OID 17070)
+-- TOC entry 3160 (class 2606 OID 16678)
 -- Name: error_log error_log_pkey; Type: CONSTRAINT; Schema: public; Owner: doadmin
 --
 
@@ -1520,7 +1520,7 @@ ALTER TABLE ONLY public.error_log
 
 
 --
--- TOC entry 3163 (class 2606 OID 17072)
+-- TOC entry 3163 (class 2606 OID 16680)
 -- Name: game game_pkey; Type: CONSTRAINT; Schema: public; Owner: doadmin
 --
 
@@ -1529,7 +1529,7 @@ ALTER TABLE ONLY public.game
 
 
 --
--- TOC entry 3165 (class 2606 OID 17074)
+-- TOC entry 3165 (class 2606 OID 16682)
 -- Name: gplayer gplayer_pkey; Type: CONSTRAINT; Schema: public; Owner: doadmin
 --
 
@@ -1538,7 +1538,7 @@ ALTER TABLE ONLY public.gplayer
 
 
 --
--- TOC entry 3168 (class 2606 OID 17076)
+-- TOC entry 3168 (class 2606 OID 16684)
 -- Name: item item_pkey; Type: CONSTRAINT; Schema: public; Owner: doadmin
 --
 
@@ -1547,7 +1547,7 @@ ALTER TABLE ONLY public.item
 
 
 --
--- TOC entry 3170 (class 2606 OID 17078)
+-- TOC entry 3170 (class 2606 OID 16686)
 -- Name: item_type item_type_pkey; Type: CONSTRAINT; Schema: public; Owner: doadmin
 --
 
@@ -1556,7 +1556,7 @@ ALTER TABLE ONLY public.item_type
 
 
 --
--- TOC entry 3175 (class 2606 OID 17080)
+-- TOC entry 3175 (class 2606 OID 16688)
 -- Name: prize_closed prize_closed_log_pkey; Type: CONSTRAINT; Schema: public; Owner: doadmin
 --
 
@@ -1565,7 +1565,7 @@ ALTER TABLE ONLY public.prize_closed
 
 
 --
--- TOC entry 3173 (class 2606 OID 17082)
+-- TOC entry 3173 (class 2606 OID 16690)
 -- Name: prize prize_pkey; Type: CONSTRAINT; Schema: public; Owner: doadmin
 --
 
@@ -1574,7 +1574,7 @@ ALTER TABLE ONLY public.prize
 
 
 --
--- TOC entry 3177 (class 2606 OID 17084)
+-- TOC entry 3177 (class 2606 OID 16692)
 -- Name: prize_pool prize_pool_pkey; Type: CONSTRAINT; Schema: public; Owner: doadmin
 --
 
@@ -1583,7 +1583,7 @@ ALTER TABLE ONLY public.prize_pool
 
 
 --
--- TOC entry 3179 (class 2606 OID 17086)
+-- TOC entry 3179 (class 2606 OID 16694)
 -- Name: prize_tour prize_tour_pkey; Type: CONSTRAINT; Schema: public; Owner: doadmin
 --
 
@@ -1592,7 +1592,7 @@ ALTER TABLE ONLY public.prize_tour
 
 
 --
--- TOC entry 3181 (class 2606 OID 17088)
+-- TOC entry 3181 (class 2606 OID 16696)
 -- Name: prize_type prize_type_pkey; Type: CONSTRAINT; Schema: public; Owner: doadmin
 --
 
@@ -1601,7 +1601,7 @@ ALTER TABLE ONLY public.prize_type
 
 
 --
--- TOC entry 3183 (class 2606 OID 17092)
+-- TOC entry 3183 (class 2606 OID 16698)
 -- Name: rank rank_pkey; Type: CONSTRAINT; Schema: public; Owner: doadmin
 --
 
@@ -1610,7 +1610,16 @@ ALTER TABLE ONLY public.rank
 
 
 --
--- TOC entry 3185 (class 2606 OID 17094)
+-- TOC entry 3185 (class 2606 OID 16763)
+-- Name: shop_buy shop_buy_payment_id_key; Type: CONSTRAINT; Schema: public; Owner: doadmin
+--
+
+ALTER TABLE ONLY public.shop_buy
+    ADD CONSTRAINT shop_buy_payment_id_key UNIQUE (payment_id);
+
+
+--
+-- TOC entry 3187 (class 2606 OID 16700)
 -- Name: shop_buy shop_buy_pkey; Type: CONSTRAINT; Schema: public; Owner: doadmin
 --
 
@@ -1619,7 +1628,16 @@ ALTER TABLE ONLY public.shop_buy
 
 
 --
--- TOC entry 3187 (class 2606 OID 17096)
+-- TOC entry 3189 (class 2606 OID 16761)
+-- Name: shop_buy shop_buy_sub_id_key; Type: CONSTRAINT; Schema: public; Owner: doadmin
+--
+
+ALTER TABLE ONLY public.shop_buy
+    ADD CONSTRAINT shop_buy_sub_id_key UNIQUE (sub_id);
+
+
+--
+-- TOC entry 3191 (class 2606 OID 16702)
 -- Name: spinner_extra_log spinner_extra_log_pkey; Type: CONSTRAINT; Schema: public; Owner: doadmin
 --
 
@@ -1628,7 +1646,7 @@ ALTER TABLE ONLY public.spinner_extra_log
 
 
 --
--- TOC entry 3189 (class 2606 OID 17098)
+-- TOC entry 3193 (class 2606 OID 16704)
 -- Name: spinner_log spinner_log_pkey; Type: CONSTRAINT; Schema: public; Owner: doadmin
 --
 
@@ -1637,7 +1655,7 @@ ALTER TABLE ONLY public.spinner_log
 
 
 --
--- TOC entry 3191 (class 2606 OID 17100)
+-- TOC entry 3195 (class 2606 OID 16706)
 -- Name: spinner_rule spinner_rule_pkey; Type: CONSTRAINT; Schema: public; Owner: doadmin
 --
 
@@ -1646,7 +1664,7 @@ ALTER TABLE ONLY public.spinner_rule
 
 
 --
--- TOC entry 3193 (class 2606 OID 17102)
+-- TOC entry 3197 (class 2606 OID 16708)
 -- Name: spinner_win_type spinner_win_type_pkey; Type: CONSTRAINT; Schema: public; Owner: doadmin
 --
 
@@ -1655,7 +1673,7 @@ ALTER TABLE ONLY public.spinner_win_type
 
 
 --
--- TOC entry 3195 (class 2606 OID 17104)
+-- TOC entry 3199 (class 2606 OID 16710)
 -- Name: status_progress_type status_progress_type_pkey; Type: CONSTRAINT; Schema: public; Owner: doadmin
 --
 
@@ -1664,7 +1682,7 @@ ALTER TABLE ONLY public.status_progress_type
 
 
 --
--- TOC entry 3197 (class 2606 OID 17106)
+-- TOC entry 3201 (class 2606 OID 16712)
 -- Name: status_type status_type_pkey; Type: CONSTRAINT; Schema: public; Owner: doadmin
 --
 
@@ -1673,7 +1691,7 @@ ALTER TABLE ONLY public.status_type
 
 
 --
--- TOC entry 3200 (class 2606 OID 17108)
+-- TOC entry 3204 (class 2606 OID 16714)
 -- Name: subscription subscription_pkey; Type: CONSTRAINT; Schema: public; Owner: doadmin
 --
 
@@ -1682,7 +1700,7 @@ ALTER TABLE ONLY public.subscription
 
 
 --
--- TOC entry 3202 (class 2606 OID 17110)
+-- TOC entry 3206 (class 2606 OID 16716)
 -- Name: subscription_type subscription_type_pkey; Type: CONSTRAINT; Schema: public; Owner: doadmin
 --
 
@@ -1691,7 +1709,7 @@ ALTER TABLE ONLY public.subscription_type
 
 
 --
--- TOC entry 3204 (class 2606 OID 17112)
+-- TOC entry 3208 (class 2606 OID 16718)
 -- Name: timezones timezones_pkey; Type: CONSTRAINT; Schema: public; Owner: doadmin
 --
 
@@ -1700,7 +1718,7 @@ ALTER TABLE ONLY public.timezones
 
 
 --
--- TOC entry 3206 (class 2606 OID 17114)
+-- TOC entry 3210 (class 2606 OID 16720)
 -- Name: tour_set tour_set_pkey; Type: CONSTRAINT; Schema: public; Owner: doadmin
 --
 
@@ -1709,7 +1727,7 @@ ALTER TABLE ONLY public.tour_set
 
 
 --
--- TOC entry 3209 (class 2606 OID 17116)
+-- TOC entry 3213 (class 2606 OID 16722)
 -- Name: tournament tournament_pkey; Type: CONSTRAINT; Schema: public; Owner: doadmin
 --
 
@@ -1718,7 +1736,7 @@ ALTER TABLE ONLY public.tournament
 
 
 --
--- TOC entry 3214 (class 2606 OID 17118)
+-- TOC entry 3218 (class 2606 OID 16724)
 -- Name: tournament_set_game_rule tournament_set_game_rule_pkey; Type: CONSTRAINT; Schema: public; Owner: doadmin
 --
 
@@ -1727,7 +1745,7 @@ ALTER TABLE ONLY public.tournament_set_game_rule
 
 
 --
--- TOC entry 3212 (class 2606 OID 17120)
+-- TOC entry 3216 (class 2606 OID 16726)
 -- Name: tournament_set tournament_set_pkey; Type: CONSTRAINT; Schema: public; Owner: doadmin
 --
 
@@ -1736,7 +1754,7 @@ ALTER TABLE ONLY public.tournament_set
 
 
 --
--- TOC entry 3227 (class 2606 OID 17122)
+-- TOC entry 3231 (class 2606 OID 16728)
 -- Name: user_admin_change_log user_admin_change_log_pkey; Type: CONSTRAINT; Schema: public; Owner: doadmin
 --
 
@@ -1745,7 +1763,7 @@ ALTER TABLE ONLY public.user_admin_change_log
 
 
 --
--- TOC entry 3221 (class 2606 OID 17124)
+-- TOC entry 3225 (class 2606 OID 16730)
 -- Name: user user_email_key; Type: CONSTRAINT; Schema: public; Owner: doadmin
 --
 
@@ -1754,7 +1772,7 @@ ALTER TABLE ONLY public."user"
 
 
 --
--- TOC entry 3229 (class 2606 OID 17126)
+-- TOC entry 3233 (class 2606 OID 16732)
 -- Name: user_invites user_invites_pkey; Type: CONSTRAINT; Schema: public; Owner: doadmin
 --
 
@@ -1763,7 +1781,7 @@ ALTER TABLE ONLY public.user_invites
 
 
 --
--- TOC entry 3231 (class 2606 OID 17128)
+-- TOC entry 3235 (class 2606 OID 16734)
 -- Name: user_invites user_invites_user_id_key; Type: CONSTRAINT; Schema: public; Owner: doadmin
 --
 
@@ -1772,7 +1790,7 @@ ALTER TABLE ONLY public.user_invites
 
 
 --
--- TOC entry 3223 (class 2606 OID 17130)
+-- TOC entry 3227 (class 2606 OID 16736)
 -- Name: user user_pkey; Type: CONSTRAINT; Schema: public; Owner: doadmin
 --
 
@@ -1781,7 +1799,7 @@ ALTER TABLE ONLY public."user"
 
 
 --
--- TOC entry 3233 (class 2606 OID 17132)
+-- TOC entry 3237 (class 2606 OID 16738)
 -- Name: user_status_type user_status_type_pkey; Type: CONSTRAINT; Schema: public; Owner: doadmin
 --
 
@@ -1790,7 +1808,7 @@ ALTER TABLE ONLY public.user_status_type
 
 
 --
--- TOC entry 3225 (class 2606 OID 17134)
+-- TOC entry 3229 (class 2606 OID 16740)
 -- Name: user user_username_key; Type: CONSTRAINT; Schema: public; Owner: doadmin
 --
 
@@ -1799,7 +1817,7 @@ ALTER TABLE ONLY public."user"
 
 
 --
--- TOC entry 3237 (class 2606 OID 17136)
+-- TOC entry 3241 (class 2606 OID 16742)
 -- Name: winner_change_log winner_change_log_pkey; Type: CONSTRAINT; Schema: public; Owner: doadmin
 --
 
@@ -1808,7 +1826,7 @@ ALTER TABLE ONLY public.winner_change_log
 
 
 --
--- TOC entry 3235 (class 2606 OID 17138)
+-- TOC entry 3239 (class 2606 OID 16744)
 -- Name: winner winner_pkey; Type: CONSTRAINT; Schema: public; Owner: doadmin
 --
 
@@ -1817,7 +1835,7 @@ ALTER TABLE ONLY public.winner
 
 
 --
--- TOC entry 3239 (class 2606 OID 17140)
+-- TOC entry 3243 (class 2606 OID 16746)
 -- Name: winner_status_type winner_status_type_pkey; Type: CONSTRAINT; Schema: public; Owner: doadmin
 --
 
@@ -1826,7 +1844,7 @@ ALTER TABLE ONLY public.winner_status_type
 
 
 --
--- TOC entry 3161 (class 1259 OID 17141)
+-- TOC entry 3161 (class 1259 OID 16747)
 -- Name: game_lower_idx; Type: INDEX; Schema: public; Owner: doadmin
 --
 
@@ -1834,7 +1852,7 @@ CREATE INDEX game_lower_idx ON public.game USING btree (lower((title)::text));
 
 
 --
--- TOC entry 3215 (class 1259 OID 17142)
+-- TOC entry 3219 (class 1259 OID 16748)
 -- Name: idx_user_email; Type: INDEX; Schema: public; Owner: doadmin
 --
 
@@ -1842,7 +1860,7 @@ CREATE INDEX idx_user_email ON public."user" USING btree (email);
 
 
 --
--- TOC entry 3216 (class 1259 OID 17143)
+-- TOC entry 3220 (class 1259 OID 16749)
 -- Name: idx_user_firstname; Type: INDEX; Schema: public; Owner: doadmin
 --
 
@@ -1850,7 +1868,7 @@ CREATE INDEX idx_user_firstname ON public."user" USING btree (firstname);
 
 
 --
--- TOC entry 3217 (class 1259 OID 17144)
+-- TOC entry 3221 (class 1259 OID 16750)
 -- Name: idx_user_lastname; Type: INDEX; Schema: public; Owner: doadmin
 --
 
@@ -1858,7 +1876,7 @@ CREATE INDEX idx_user_lastname ON public."user" USING btree (lastname);
 
 
 --
--- TOC entry 3218 (class 1259 OID 17145)
+-- TOC entry 3222 (class 1259 OID 16751)
 -- Name: idx_user_phone; Type: INDEX; Schema: public; Owner: doadmin
 --
 
@@ -1866,7 +1884,7 @@ CREATE INDEX idx_user_phone ON public."user" USING btree (phone);
 
 
 --
--- TOC entry 3219 (class 1259 OID 17146)
+-- TOC entry 3223 (class 1259 OID 16752)
 -- Name: idx_user_username; Type: INDEX; Schema: public; Owner: doadmin
 --
 
@@ -1874,7 +1892,7 @@ CREATE INDEX idx_user_username ON public."user" USING btree (username);
 
 
 --
--- TOC entry 3166 (class 1259 OID 17147)
+-- TOC entry 3166 (class 1259 OID 16753)
 -- Name: item_lower_idx; Type: INDEX; Schema: public; Owner: doadmin
 --
 
@@ -1882,7 +1900,7 @@ CREATE INDEX item_lower_idx ON public.item USING btree (lower((title)::text));
 
 
 --
--- TOC entry 3171 (class 1259 OID 17148)
+-- TOC entry 3171 (class 1259 OID 16754)
 -- Name: prize_lower_idx; Type: INDEX; Schema: public; Owner: doadmin
 --
 
@@ -1890,7 +1908,7 @@ CREATE INDEX prize_lower_idx ON public.prize USING btree (lower((title)::text));
 
 
 --
--- TOC entry 3198 (class 1259 OID 17149)
+-- TOC entry 3202 (class 1259 OID 16755)
 -- Name: subscription_lower_idx; Type: INDEX; Schema: public; Owner: doadmin
 --
 
@@ -1898,7 +1916,7 @@ CREATE INDEX subscription_lower_idx ON public.subscription USING btree (lower((t
 
 
 --
--- TOC entry 3207 (class 1259 OID 17150)
+-- TOC entry 3211 (class 1259 OID 16756)
 -- Name: tournament_lower_idx; Type: INDEX; Schema: public; Owner: doadmin
 --
 
@@ -1906,14 +1924,14 @@ CREATE INDEX tournament_lower_idx ON public.tournament USING btree (lower((title
 
 
 --
--- TOC entry 3210 (class 1259 OID 17151)
+-- TOC entry 3214 (class 1259 OID 16757)
 -- Name: tournament_set_lower_idx; Type: INDEX; Schema: public; Owner: doadmin
 --
 
 CREATE INDEX tournament_set_lower_idx ON public.tournament_set USING btree (lower((title)::text));
 
 
--- Completed on 2021-06-11 22:12:28 +08
+-- Completed on 2021-06-19 14:59:03 +08
 
 --
 -- PostgreSQL database dump complete

@@ -6,7 +6,7 @@ LD=$1
 echo ""
 echo ""
 echo "Regenerate postgres standby server.crt server.key server.csr"
-read -p "IMPORTANT: just leave all the passphrae empty please. Press enter key to continue."
+read -p "${RED}IMPORTANT${NC}: just leave all the passphrae empty please. Press enter key to continue."
 echo  "_____________________________________________________________________________________"
 certstrap request-cert --common-name server --domain pg-standby
 certstrap sign server --CA ca

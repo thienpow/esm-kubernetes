@@ -1,5 +1,10 @@
 #!/bin/sh
 
+
+export BOLD=$(tput bold)                         # make colors bold/bright
+export RED="$BOLD$(tput setaf 1)"                # bright red text
+export NC=$'\e[0m'      
+
 #
 # modify the export values below to the right one on your deployment
 #

@@ -8,6 +8,6 @@ LD="$(../../helper_sh/check_current_cluster.sh $1)" # auto check and set the val
 # here we build and push to registry
 #
 image_name="registry.digitalocean.com/esm-dev/${LD}-pg-pool"
-docker build --rm -t $image_name . -f ${LD}-Dockerfile
+docker build --rm -t $image_name . -f ${LD}.Dockerfile
 docker push $image_name
 docker rmi $image_name

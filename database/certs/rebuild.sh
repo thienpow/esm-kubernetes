@@ -1,5 +1,11 @@
 #!/bin/sh
 
+
+export BOLD=$(tput bold)                         # make colors bold/bright
+export RED="$BOLD$(tput setaf 1)"                # bright red text
+export NC=$'\e[0m'      
+
+
 doctl registry login
 
 LD="$(../../helper_sh/check_current_cluster.sh)" # auto check and set the value for live or dev cluster.
@@ -9,7 +15,7 @@ rm -rf out
 echo ""
 echo ""
 echo "Regenerate All certs for postgres"
-read -p "IMPORTANT: just leave all the passphrae empty please. Press enter key to continue."
+read -p "${RED}IMPORTANT${NC}: just leave all the passphrae empty please. Press enter key to continue."
 echo  "_____________________________________________________________________________________"
 certstrap init --common-name ca
 

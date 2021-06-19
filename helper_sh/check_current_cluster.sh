@@ -1,3 +1,6 @@
+#!/bin/sh
+
+
 if [ $# -eq 0 ]; then
       
     cluster_result="$(kubectl get nodes)"

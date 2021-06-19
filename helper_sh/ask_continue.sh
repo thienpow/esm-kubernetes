@@ -1,8 +1,11 @@
-#!/bin/sh
+#!/bin/bash
 
+export BOLD=$(tput bold)                         # make colors bold/bright
+export RED="$BOLD$(tput setaf 1)"                # bright red text
+export NC=$'\e[0m'      
 
 while true; do
-  read -p "You are now in $1 cluster.  Are you sure want to continue? (y/n) : " yn
+  read -p "You are now in ${RED}$1${NC} cluster. Are you sure want to continue? (y/n) : " yn
   case $yn in
     [Yy]* ) 
       break;;

@@ -7,17 +7,12 @@ LD="$(../helper_sh/check_current_cluster.sh $1)" # auto check and set the value 
 
 kubectl apply -f pg-ca-secret-$LD.yaml
 
+./restart_all_pg.sh $1
 
-kubectl apply -f pgpool/pgpool-configmap-$LD.yaml
-kubectl apply -f pgpool/pgpool-deployment-$LD.yaml
-kubectl apply -f pg-standby/postgres-standby-deployment-$LD.yaml
 kubectl apply -f gloader/esm-game-loader-deployment-$LD.yaml
 kubectl apply -f service/esmservice-deployment-$LD.yaml
 kubectl apply -f checkers/checkers-deployment-$LD.yaml
 
-kubectl rollout restart deployment pg-master
-kubectl rollout restart deployment pg-standby
-kubectl rollout restart deployment pgpool
 kubectl rollout restart deployment esmservice
 kubectl rollout restart deployment esm-game-loader
 kubectl rollout restart deployment checkers

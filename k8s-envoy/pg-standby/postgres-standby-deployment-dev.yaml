@@ -26,7 +26,7 @@ spec:
         - -c
         - listen_addresses=*
         - -c
-        - port=5433
+        - port=5432
         - -c
         - ssl=on
         - -c
@@ -40,7 +40,7 @@ spec:
         #- -c
         #- restore_command='cp /archives/%f %p'
         - -c
-        - primary_conninfo=user=replicator password=tf45h3hpz6xstby6 channel_binding=prefer host=pg-master port=25432 sslmode=prefer sslcompression=0 ssl_min_protocol_version=TLSv1.2 gssencmode=prefer krbsrvname=postgres target_session_attrs=any
+        - primary_conninfo=user=replicator password=tf45h3hpz6xstby6 channel_binding=prefer host=pg-master port=5432 sslmode=prefer sslcompression=0 ssl_min_protocol_version=TLSv1.2 gssencmode=prefer krbsrvname=postgres target_session_attrs=any
         
         env:
         - name: PG_REP_PASSWORD
@@ -56,9 +56,9 @@ spec:
         - name: PG_MASTER_HOST
           value: pg-master
         - name: PG_MASTER_PORT
-          value: '25432'
+          value: '5432'
         ports:
-          - containerPort: 5433
+          - containerPort: 5432
         resources: {}
       imagePullSecrets:
       - name: registry-esm-dev
