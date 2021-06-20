@@ -38,7 +38,7 @@ spec:
         - name: LISTEN_ON
           value: 0.0.0.0:50051
         - name: SERVER_TIMEZONE
-          value: "8"
+          value: "0"
         - name: STRIPE_SECRET
           value: sk_test_51IOa7gBGCaV2oEVpEDw9fOn1fUn8IaPOemu7Yjkg6N75C3ahsd7sEQr3ait4JYU55wfCBbXCRPIhcUxGMVtQYA6A003YKMqkYF
         resources: {}

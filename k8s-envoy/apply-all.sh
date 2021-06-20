@@ -42,7 +42,8 @@ kubectl apply -f pgpool-configmap-$LD.yaml
 kubectl apply -f pgpool-service.yaml
 kubectl apply -f pgpool-deployment-$LD.yaml
 
-kubectl apply -f pgdumper/pgdumper-config.yaml
+kubectl apply -f pgdumper/pgdumper-backup.yaml
+kubectl apply -f pgdumper/pgdumper-crontabs-root.yaml
 kubectl apply -f pgdumper/pgdumper-deployment.yaml
 
 # then other micro-services
