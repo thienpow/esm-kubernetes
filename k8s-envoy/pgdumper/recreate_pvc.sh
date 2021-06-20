@@ -43,5 +43,6 @@ choice_size=1
 # finally recreating the pvc,pv and restart the pgdumper
 #
 sed -i.bak "s/storage:.*/storage: ${choice_size}Gi/" pgdumper-pvc.yaml
+rm pgdumper-pvc.yaml.bak
 kubectl apply -f pgdumper-pvc.yaml
 kubectl scale deploy pgdumper --replicas=1

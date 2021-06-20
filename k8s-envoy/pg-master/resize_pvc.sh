@@ -44,6 +44,7 @@ if test $size_to_resize -gt $value
 then
   read -p "Press any key to continue to resize now to ${size_to_resize}Gi.  Or, CTRL+C to cancel."
   sed -i.bak "s/storage:.*/storage: $size_to_resizeGi/" postgres-master-pvc-$LD.yaml
+  rm postgres-master-pvc-$LD.yaml.bak
   kubectl apply -f postgres-master-pvc-$LD.yaml
   kubectl rollout restart deployment pg-master
 else

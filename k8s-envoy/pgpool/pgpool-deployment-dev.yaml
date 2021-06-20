@@ -17,9 +17,15 @@ spec:
         image: registry.digitalocean.com/esm-dev/dev-pg-pool:latest
         env:
         - name: POSTGRES_USERNAME
-          value: doadmin
+          valueFrom:
+            configMapKeyRef:
+              name: pg-config
+              key: POSTGRES_USER
         - name: POSTGRES_PASSWORD
-          value: tf45h3hpz6xstby6
+          valueFrom:
+            configMapKeyRef:
+              name: pg-config
+              key: POSTGRES_PASSWORD
         resources: {}
         volumeMounts:
         - name: pgpool-config

@@ -21,7 +21,10 @@ spec:
         - name: PORT
           value: "4242"
         - name: STRIPE_SECRET
-          value: sk_test_51IOa7gBGCaV2oEVpEDw9fOn1fUn8IaPOemu7Yjkg6N75C3ahsd7sEQr3ait4JYU55wfCBbXCRPIhcUxGMVtQYA6A003YKMqkYF
+          valueFrom:
+            configMapKeyRef:
+              name: stripe-config
+              key: STRIPE_SECRET
         resources: {}
         ports:
         - containerPort: 4242

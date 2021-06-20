@@ -7,11 +7,11 @@ if [ $# -eq 0 ]; then
 
     if echo "$cluster_result" | grep -q "dev-pool"; then
         LD="dev"
-        echo "dev";
+        echo "dev"
     else
       if echo "$cluster_result" | grep -q "live-pool"; then
         LD="live"
-        echo "live";
+        echo "live"
       fi
     fi
 

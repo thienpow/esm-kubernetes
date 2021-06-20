@@ -19,6 +19,36 @@ spec:
       containers:
       - name: pg-standby
         image: registry.digitalocean.com/esm-dev/live-pg-standby:latest
+        env:
+        - name: PG_REP_PASSWORD
+          valueFrom:
+            configMapKeyRef:
+              name: pg-config
+              key: PG_REP_PASSWORD
+        - name: PG_REP_USER
+          valueFrom:
+            configMapKeyRef:
+              name: pg-config
+              key: PG_REP_USER
+        - name: POSTGRES_DB
+          valueFrom:
+            configMapKeyRef:
+              name: pg-config
+              key: POSTGRES_DB
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            configMapKeyRef:
+              name: pg-config
+              key: POSTGRES_PASSWORD
+        - name: POSTGRES_USER
+          valueFrom:
+            configMapKeyRef:
+              name: pg-config
+              key: POSTGRES_USER
+        - name: PG_MASTER_HOST
+          value: pg-master
+        - name: PG_MASTER_PORT
+          value: '5432'
         args: 
         - gosu 
         - postgres 
@@ -37,26 +67,9 @@ spec:
         - ssl_ca_file=/var/lib/postgresql/ca.crt
         - -c
         - ssl_crl_file=/var/lib/postgresql/ca.crl
-        #- -c
-        #- restore_command='cp /archives/%f %p'
         - -c
-        - primary_conninfo=user=replicator password=tf45h3hpz6xstby6 channel_binding=prefer host=pg-master port=5432 sslmode=prefer sslcompression=0 ssl_min_protocol_version=TLSv1.2 gssencmode=prefer krbsrvname=postgres target_session_attrs=any
+        - primary_conninfo=user=$(PG_REP_USER) password=$(PG_REP_PASSWORD) channel_binding=prefer host=pg-master port=5432 sslmode=prefer sslcompression=0 ssl_min_protocol_version=TLSv1.2 gssencmode=prefer krbsrvname=postgres target_session_attrs=any
         
-        env:
-        - name: PG_REP_PASSWORD
-          value: tf45h3hpz6xstby6
-        - name: PG_REP_USER
-          value: replicator
-        - name: POSTGRES_DB
-          value: postgres
-        - name: POSTGRES_PASSWORD
-          value: tf45h3hpz6xstby6
-        - name: POSTGRES_USER
-          value: doadmin
-        - name: PG_MASTER_HOST
-          value: pg-master
-        - name: PG_MASTER_PORT
-          value: '5432'
         ports:
           - containerPort: 5432
         resources: {}

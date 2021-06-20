@@ -8,7 +8,8 @@ LD="$(../helper_sh/check_current_cluster.sh)" # auto check and set the value for
 
 kubectl apply -f do-secret.yaml
 kubectl apply -f pg-ca-secret-$LD.yaml
-
+kubectl apply -f pg-config-$LD.yaml
+kubectl apply -f google-config-$LD.yaml
 
 echo "creating persistent volumes"
 # enable csi for pvc first
@@ -26,8 +27,8 @@ kubectl apply -f pgdumper/pgdumper-pvc.yaml
 
 # database first
 echo "creating pg-master, pg-standby, pg-pool"
-kubectl apply -f postgres-master-service.yaml
-kubectl apply -f postgres-master-deployment-$LD.yaml
+kubectl apply -f pg-master/postgres-master-service.yaml
+kubectl apply -f pg-master/postgres-master-deployment-$LD.yaml
 # go to Kubernetes Dashboard, Pod menu, look for the newly created pg-master-xxx in the list, go for the right side drop down menu, choose log,
 # also if it's in "red eye" icon, click on the icon to see what's the error message. usually it's because of the required resources is not ready and you rushed to this step.
 echo "Wait for pg-master to be Ready."
@@ -35,12 +36,12 @@ echo "check if the pg-master is Ready, if yes, then press CTRL+C one time to con
 kubectl get deployment pg-master -w
 
 # wait for pg-master is ready and online before going for pg-standby
-kubectl apply -f postgres-standby-service.yaml
-kubectl apply -f postgres-standby-deployment.yaml
+kubectl apply -f pg-standby/postgres-standby-service.yaml
+kubectl apply -f pg-standby/postgres-standby-deployment.yaml
 
-kubectl apply -f pgpool-configmap-$LD.yaml
-kubectl apply -f pgpool-service.yaml
-kubectl apply -f pgpool-deployment-$LD.yaml
+kubectl apply -f pgpool/pgpool-configmap-$LD.yaml
+kubectl apply -f pgpool/pgpool-service.yaml
+kubectl apply -f pgpool/pgpool-deployment-$LD.yaml
 
 kubectl apply -f pgdumper/pgdumper-backup.yaml
 kubectl apply -f pgdumper/pgdumper-crontabs-root.yaml
@@ -54,33 +55,33 @@ echo "Check DigitalOcean -> Networking -> Load Balancers or wait below until you
 # Check DigitalOcean -> Networking -> Load Balancers, rename the new loadbalancer name to something like live-frontenvoy-sgp1
 kubectl get services frontenvoy -w
 
-kubectl apply -f certbot-service.yaml
-kubectl apply -f esm-admin-service.yaml
-kubectl apply -f esm-homeapp-service.yaml
-kubectl apply -f esm-game-loader-service.yaml
-kubectl apply -f esm-stripe-service.yaml
-kubectl apply -f esmservice-service.yaml
-kubectl apply -f grpc-web-proxy-service.yaml
+kubectl apply -f certbot/certbot-service.yaml
+kubectl apply -f admin/esm-admin-service.yaml
+kubectl apply -f homeapp/esm-homeapp-service.yaml
+kubectl apply -f gloader/esm-game-loader-service.yaml
+kubectl apply -f stripe/esm-stripe-service.yaml
+kubectl apply -f service/esmservice-service.yaml
+kubectl apply -f grpcwebproxy/grpc-web-proxy-service.yaml
 
-kubectl apply -f esm-admin-deployment-$LD.yaml
-kubectl apply -f esm-homeapp-deployment-$LD.yaml
-kubectl apply -f esm-game-loader-deployment-$LD.yaml
-kubectl apply -f esm-stripe-deployment-$LD.yaml
-kubectl apply -f esmservice-deployment-$LD.yaml
-kubectl apply -f grpc-web-proxy-configmap.yaml
-kubectl apply -f grpc-web-proxy-deployment.yaml
-kubectl apply -f checkers-deployment-$LD.yaml
+kubectl apply -f admin/esm-admin-deployment-$LD.yaml
+kubectl apply -f homeapp/esm-homeapp-deployment-$LD.yaml
+kubectl apply -f gloader/esm-game-loader-deployment-$LD.yaml
+kubectl apply -f stripe/esm-stripe-deployment-$LD.yaml
+kubectl apply -f service/esmservice-deployment-$LD.yaml
+kubectl apply -f grpcwebproxy/grpc-web-proxy-configmap.yaml
+kubectl apply -f grpcwebproxy/grpc-web-proxy-deployment.yaml
+kubectl apply -f checkers/checkers-deployment-$LD.yaml
 
 
 # start frontenvoy with a nocert config first
-kubectl apply -f frontenvoy-configmap-$LD-nocert.yaml
-kubectl apply -f frontenvoy-deployment-nocert.yaml
+kubectl apply -f frontenvoy/frontenvoy-configmap-$LD-nocert.yaml
+kubectl apply -f frontenvoy/frontenvoy-deployment-nocert.yaml
 
 echo "Wait for frontenvoy (nocert) to be Ready, before staring certbot"
 echo "***** check if frontenvoy is ready *****, if yes, press CTRL+C one time to continue."
 kubectl get deployment frontenvoy -w
 
-kubectl apply -f certbot-deployment-$LD.yaml
+kubectl apply -f certbot/certbot-deployment-$LD.yaml
 
 echo "Wait for certbot to be Ready, before staring frontenvoy that's serving with cert."
 echo ""
@@ -95,6 +96,6 @@ echo "check if the certbot is Ready, if yes, then press CTRL+C one time to conti
 kubectl get deployment certbot -w
 
 # restart frontenvoy with main config
-kubectl apply -f frontenvoy-configmap-$LD.yaml
-kubectl apply -f frontenvoy-deployment.yaml
+kubectl apply -f frontenvoy/frontenvoy-configmap-$LD.yaml
+kubectl apply -f frontenvoy/frontenvoy-deployment.yaml
 kubectl rollout restart deployment frontenvoy

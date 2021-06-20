@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: google-config
+data:
+  FCM_KEY: AAAAzT8d8lM:APA91bHtFSHVIBiiSDUWSaUkrYNrcBSyhMY_JBYSeaaoWpkrxSgBO-7xgHtySH3qfTvsgHHTIsrh_SwwirCvTTuOWBl0--JhddEV8MFnEgWuGRPOXPVyTBHym5k9gh8WrCxr-rY13Y54
+  JWK_AUDIENCE: esports-mini
+  JWK_ISSUER: https://securetoken.google.com/esports-mini
+  JWK_URL: https://www.googleapis.com/service_accounts/v1/jwk/securetoken@system.gserviceaccount.com
+  

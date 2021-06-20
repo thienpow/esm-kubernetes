@@ -57,5 +57,6 @@ done
 # finally recreating the pvc,pv and restart the pg-master
 #
 sed -i.bak "s/storage:.*/storage: ${choice_size}Gi/" postgres-master-pvc-$LD.yaml
+rm  postgres-master-pvc-$LD.yaml.bak
 kubectl apply -f postgres-master-pvc-$LD.yaml
 kubectl scale deploy pg-master  --replicas=1

@@ -26,21 +26,39 @@ spec:
         - name: DB_CERT_PATH
           value: /etc/ssl/certs/ca.crt
         - name: DB_CONN_STRING
-          value: postgresql://doadmin:tf45h3hpz6xstby6@pgpool:9999/postgres?sslmode=require
+          valueFrom:
+            configMapKeyRef:
+              name: pg-config
+              key: DB_CONN_STRING
         - name: FCM_KEY
-          value: AAAAzT8d8lM:APA91bHtFSHVIBiiSDUWSaUkrYNrcBSyhMY_JBYSeaaoWpkrxSgBO-7xgHtySH3qfTvsgHHTIsrh_SwwirCvTTuOWBl0--JhddEV8MFnEgWuGRPOXPVyTBHym5k9gh8WrCxr-rY13Y54
+          valueFrom:
+            configMapKeyRef:
+              name: google-config
+              key: FCM_KEY
         - name: JWK_AUDIENCE
-          value: esports-mini
+          valueFrom:
+            configMapKeyRef:
+              name: google-config
+              key: JWK_AUDIENCE
         - name: JWK_ISSUER
-          value: https://securetoken.google.com/esports-mini
+          valueFrom:
+            configMapKeyRef:
+              name: google-config
+              key: JWK_ISSUER
         - name: JWK_URL
-          value: https://www.googleapis.com/service_accounts/v1/jwk/securetoken@system.gserviceaccount.com
+          valueFrom:
+            configMapKeyRef:
+              name: google-config
+              key: JWK_URL
         - name: LISTEN_ON
           value: 0.0.0.0:50051
         - name: SERVER_TIMEZONE
           value: "0"
         - name: STRIPE_SECRET
-          value: sk_test_51IOa7gBGCaV2oEVpEDw9fOn1fUn8IaPOemu7Yjkg6N75C3ahsd7sEQr3ait4JYU55wfCBbXCRPIhcUxGMVtQYA6A003YKMqkYF
+          valueFrom:
+            configMapKeyRef:
+              name: stripe-config
+              key: STRIPE_SECRET
         resources: {}
         ports:
         - containerPort: 50051

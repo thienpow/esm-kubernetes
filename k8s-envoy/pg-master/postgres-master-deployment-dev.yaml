@@ -19,6 +19,32 @@ spec:
       containers:
       - name: pg-master
         image: registry.digitalocean.com/esm-dev/dev-pg-master:latest #nginx:alpine  
+        env:
+        - name: PG_REP_PASSWORD
+          valueFrom:
+            configMapKeyRef:
+              name: pg-config
+              key: PG_REP_PASSWORD
+        - name: PG_REP_USER
+          valueFrom:
+            configMapKeyRef:
+              name: pg-config
+              key: PG_REP_USER
+        - name: POSTGRES_DB
+          valueFrom:
+            configMapKeyRef:
+              name: pg-config
+              key: POSTGRES_DB
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            configMapKeyRef:
+              name: pg-config
+              key: POSTGRES_PASSWORD
+        - name: POSTGRES_USER
+          valueFrom:
+            configMapKeyRef:
+              name: pg-config
+              key: POSTGRES_USER
         args: 
         - -c
         - listen_addresses=*
@@ -48,17 +74,6 @@ spec:
         - archive_mode=on
         - -c
         - archive_command=cd .
-        env:
-        - name: PG_REP_PASSWORD
-          value: tf45h3hpz6xstby6
-        - name: PG_REP_USER
-          value: replicator
-        - name: POSTGRES_DB
-          value: postgres
-        - name: POSTGRES_PASSWORD
-          value: tf45h3hpz6xstby6
-        - name: POSTGRES_USER
-          value: doadmin
         ports:
           - containerPort: 5432
         resources: {}

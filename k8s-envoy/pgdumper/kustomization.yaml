@@ -1,5 +1,0 @@
-configMapGenerator:
-- name: pgdumper-script
-  files:
-  - backup.sh
-  - root

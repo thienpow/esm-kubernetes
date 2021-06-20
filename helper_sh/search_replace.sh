@@ -9,4 +9,4 @@ replace=$4
 input_file="$(find ${folder} -type f -iname ${pattern})"
 echo "checking ${input_file} and edit ${search} to ${replace}"
 sed -i.bak "s/${search}/${replace}/g" "${input_file}"
-rm "${input_file}.bak";
+rm "${input_file}.bak"

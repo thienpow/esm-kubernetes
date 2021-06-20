@@ -21,13 +21,25 @@ spec:
         - name: DB_CERT_PATH
           value: /etc/ssl/certs/ca.crt
         - name: DB_CONN_STRING
-          value: postgresql://doadmin:tf45h3hpz6xstby6@pgpool:9999/postgres?sslmode=require
+          valueFrom:
+            configMapKeyRef:
+              name: pg-config
+              key: DB_CONN_STRING
         - name: JWK_AUDIENCE
-          value: esports-mini
+          valueFrom:
+            configMapKeyRef:
+              name: google-config
+              key: JWK_AUDIENCE
         - name: JWK_ISSUER
-          value: https://securetoken.google.com/esports-mini
+          valueFrom:
+            configMapKeyRef:
+              name: google-config
+              key: JWK_ISSUER
         - name: JWK_URL
-          value: https://www.googleapis.com/service_accounts/v1/jwk/securetoken@system.gserviceaccount.com
+          valueFrom:
+            configMapKeyRef:
+              name: google-config
+              key: JWK_URL
         - name: LISTEN_ON
           value: 0.0.0.0:3033
         - name: SERVER_TIMEZONE

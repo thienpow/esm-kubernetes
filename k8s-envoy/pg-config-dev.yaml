@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: pg-config
+data:
+  # ********************
+  # IMPORTANT: 
+  # changing these values won't really relect immediately, 
+  # you must connect to the pg-master database and 
+  # change the original password or user via SQL or via the pgAdmin4 GUI first, as the database/roles has already been created.
+  # ********************
+  POSTGRES_USER: doadmin
+  POSTGRES_PASSWORD: tf45h3hpz6xstby6
+  PG_REP_USER: replicator
+  PG_REP_PASSWORD: tf45h3hpz6xstby6
+  POSTGRES_DB: postgres
+  DB_CONN_STRING: postgresql://doadmin:tf45h3hpz6xstby6@pgpool:9999/postgres?sslmode=require

@@ -43,5 +43,6 @@ choice_size=1
 # finally recreating the pvc,pv and restart the certbot
 #
 sed -i.bak "s/storage:.*/storage: ${choice_size}Gi/" certbot-pvc.yaml
+rm certbot-pvc.yaml.bak
 kubectl apply -f certbot-pvc.yaml
 kubectl scale deploy certbot --replicas=1
