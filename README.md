@@ -102,10 +102,13 @@ kubectl apply -f postgres-master-pvc-live.yaml
 kubectl scale deploy pg-master  --replicas=1
 ```
 * don't ever try --replicas greater than 1! it will cause permanant locking of the system.
-* finally,
+
+# Or, use the script i written!
+* check the k8s-envoy/pg-master/resize_pvc.sh
+* to use:
 ```sh
-kubectl rollout restart deployment pg-standby
-kubectl rollout restart deployment pgpool
+cd k8s-envoy/pg-master
+./resize_pvc.sh
 ```
 
 
@@ -128,3 +131,27 @@ kubectl exec -it "$(kubectl get pods --selector=app=pg-master | awk 'NR>1{print 
 kubectl exec -it "$(kubectl get pods --selector=app=pg-master | awk 'NR>1{print $1}')" -- /bin/df -h | awk 'NR==11{print}'
 
 ```
+
+# great scripts to use.
+
+#### resize_pvc, recreate_pvc:
+* k8s-envoy/pg-master/resize_pvc.sh 
+* k8s-envoy/pg-master/recreate_pvc.sh (it is not recommended to touch... because recreate means destroy existing. )
+* k8s-envoy/certbot/recreate_pvc.sh 
+* k8s-envoy/pgdumper/recreate_pvc.sh 
+* k8s-envoy/pgdumper/resize_pvc.sh 
+
+#### df:
+* k8s-envoy/pg-master/df.sh
+* k8s-envoy/certbot/df.sh
+* k8s-envoy/pgdumper/df.sh
+
+#### rebuild microservices docker images
+* micro/rebuild.sh (it has step by step guide)
+
+#### rebuild database and certs
+* database/certs/rebuild.sh (it has step by step guide)
+
+#### rsync back the dumps managed by pgdumper
+* database/pgdumper/rsync_dumps.sh (this will sync back the dumps folder in pgdumper pod to your local machine)
+* database/pgdumper/ls_dumps.sh (this is like the normal ls -l command, but this is for going into the pgdumper pod and ls the dumps folder)
