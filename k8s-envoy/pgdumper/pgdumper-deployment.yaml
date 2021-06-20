@@ -29,7 +29,7 @@ spec:
         - name: PASSWORD
           value: "tf45h3hpz6xstby6"
         - name: BACKUP_DIR
-          value: /dumps/
+          value: "/dumps/"
         - name: EXPIRED_DAYS
           value: "90"
         - name: SUFFIX
@@ -38,7 +38,19 @@ spec:
         volumeMounts:
         - name: dumps-folder
           mountPath: /dumps
+        - name: backup
+          mountPath: /etc/periodic/15min
+        - name: root
+          mountPath: /var/spool/cron/crontabs
       volumes:
       - name: dumps-folder
         persistentVolumeClaim:
           claimName: pgdumper-pvc
+      - name: backup
+        configMap:
+          name: pgdumper-backup
+          defaultMode: 0771
+      - name: root
+        configMap:
+          name: pgdumper-crontabs-root
+          defaultMode: 0600

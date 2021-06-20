@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 export BOLD=$(tput bold)                         # make colors bold/bright
 export RED="$BOLD$(tput setaf 1)"                # bright red text
 export NC=$'\e[0m'      

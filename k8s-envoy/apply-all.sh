@@ -9,6 +9,7 @@ LD="$(../helper_sh/check_current_cluster.sh)" # auto check and set the value for
 kubectl apply -f do-secret.yaml
 kubectl apply -f pg-ca-secret-$LD.yaml
 
+
 echo "creating persistent volumes"
 # enable csi for pvc first
 # Do *not* add a blank space after -f
@@ -17,6 +18,7 @@ kubectl apply -fhttps://raw.githubusercontent.com/digitalocean/csi-digitalocean/
 # here is our pvc
 kubectl apply -f certbot/certbot-pvc.yaml
 kubectl apply -f pg-master/postgres-master-pvc-$LD.yaml
+kubectl apply -f pgdumper/pgdumper-pvc.yaml
 
 # ***** IMPORTANT *****
 # don't rust to next step, until you see the pvc is ready in DigitalOcean's Volume menu. 
@@ -35,9 +37,13 @@ kubectl get deployment pg-master -w
 # wait for pg-master is ready and online before going for pg-standby
 kubectl apply -f postgres-standby-service.yaml
 kubectl apply -f postgres-standby-deployment.yaml
+
 kubectl apply -f pgpool-configmap-$LD.yaml
 kubectl apply -f pgpool-service.yaml
 kubectl apply -f pgpool-deployment-$LD.yaml
+
+kubectl apply -f pgdumper/pgdumper-config.yaml
+kubectl apply -f pgdumper/pgdumper-deployment.yaml
 
 # then other micro-services
 echo "creating micro-services"

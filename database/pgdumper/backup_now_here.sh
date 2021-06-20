@@ -1,3 +1,5 @@
+#!/bin/sh
+
 
 BACKUP_DIR=dumps/
 EXPIRED_DAYS=90 #`expr $((($WEEKS_TO_KEEP * 7) + 1))`
