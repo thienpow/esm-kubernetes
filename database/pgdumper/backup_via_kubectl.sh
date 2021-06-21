@@ -2,7 +2,7 @@
 
 
 BACKUP_DIR=dumps/
-EXPIRED_DAYS=90 #`expr $((($WEEKS_TO_KEEP * 7) + 1))`
+EXPIRED_DAYS=5
 SUFFIX=".sql.gz"
 
 if [ -d "$BACKUP_DIR" ]; then
