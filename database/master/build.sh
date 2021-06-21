@@ -3,7 +3,6 @@
 
 LD="$(../../helper_sh/check_current_cluster.sh $1)" # auto check and set the value for live or dev cluster.
 
-
 #
 # here we build and push to registry
 #
