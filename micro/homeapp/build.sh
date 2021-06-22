@@ -24,7 +24,7 @@ find www/static/js/ -name "*.txt" -type f -delete
 # start modifying content of html
 #
 search="\/static"
-replace="https:\/\/esm-cdn.sgp1.cdn.digitaloceanspaces.com\/app\/${LD}\/static"
+replace="https:\/\/esm-cdn.sgp1.digitaloceanspaces.com\/app\/${LD}\/static"
 folder="www"
 ../../helper_sh/search_replace.sh "index.html" $folder $search $replace
 ../../helper_sh/search_replace.sh "asset-manifest.json" $folder $search $replace

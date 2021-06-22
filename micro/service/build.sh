@@ -6,7 +6,6 @@
 #
 LD="$(../../helper_sh/check_current_cluster.sh $1)"
 
-
 #
 # here we build and push to registry
 #
