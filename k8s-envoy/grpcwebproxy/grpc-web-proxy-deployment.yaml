@@ -5,7 +5,7 @@ metadata:
   labels:
     app: grpc-web-proxy
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: grpc-web-proxy
@@ -22,7 +22,13 @@ spec:
           value: "0"
         - name: ENVOY_UID
           value: "0"
-        resources: {}
+        resources: 
+          requests:
+            memory: 64Mi
+            cpu: 50m
+          limits:
+            memory: 128Mi
+            cpu: 200m
         ports:
         - containerPort: 8087
         volumeMounts:

@@ -5,7 +5,7 @@ metadata:
   labels:
     app: esmservice
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: esmservice
@@ -59,7 +59,13 @@ spec:
             configMapKeyRef:
               name: stripe-config
               key: STRIPE_SECRET
-        resources: {}
+        resources: 
+          requests:
+            memory: 64Mi
+            cpu: 150m
+          limits:
+            memory: 128Mi
+            cpu: 200m
         ports:
         - containerPort: 50051
           

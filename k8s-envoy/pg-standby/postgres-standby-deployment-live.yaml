@@ -72,6 +72,12 @@ spec:
         
         ports:
           - containerPort: 5432
-        resources: {}
+        resources: 
+          requests:
+            memory: 256Mi
+            cpu: 200m
+          limits:
+            memory: 512Mi
+            cpu: 250m
       imagePullSecrets:
       - name: registry-esm-dev
