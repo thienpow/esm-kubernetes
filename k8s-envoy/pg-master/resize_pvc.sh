@@ -30,10 +30,10 @@ usage_percent=$(echo $usage_percent | sed -e "s/%//g")
 if test $usage_percent -gt $RESIZE_THRESHOLD
 then
   echo ">${RESIZE_THRESHOLD}% disk space used, should resize."
-  extra=$value+5 #recommended to add 5Gi
+  extra=$(($value + 5)) #recommended to add 5Gi
   if test $extra -gt $size_to_resize #check if the user specified size to add is actually more than the recommended 5Gi
   then
-    $size_to_resize=$extra #if user specified is lesser, use the 5Gi recommendation.
+    size_to_resize=$extra #if user specified is lesser, use the 5Gi recommendation.
   fi
 else
   echo "Disk space still ok, $usage_percent% used."
@@ -43,7 +43,7 @@ fi
 if test $size_to_resize -gt $value
 then
   read -p "Press any key to continue to resize now to ${size_to_resize}Gi.  Or, CTRL+C to cancel."
-  sed -i.bak "s/storage:.*/storage: $size_to_resizeGi/" postgres-master-pvc-$LD.yaml
+  sed -i.bak "s/storage:.*/storage: ${size_to_resize}Gi/" postgres-master-pvc-$LD.yaml
   rm postgres-master-pvc-$LD.yaml.bak
   kubectl apply -f postgres-master-pvc-$LD.yaml
   kubectl rollout restart deployment pg-master

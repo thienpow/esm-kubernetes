@@ -65,13 +65,13 @@ LD="$(../helper_sh/check_current_cluster.sh)" # auto check and set the value for
 while :; do
 
   if test -z "$choice"; then
-    read -p "Rebuild: All(0), admin(1), homeapp(2), checkers(3), gloader(4), service(5), stripe(6)" choice
+    read -p "Rebuild: All(0), admin(1), homeapp(2), checkers(3), gloader(4), service(5), stripe(6) : " choice
   fi
   
   if [ "$choice" -ge 0 ] && [ "$choice" -le 6 ]; then
     break
   else
-    read -p "Rebuild: All(0), admin(1), homeapp(2), checkers(3), gloader(4), service(5), stripe(6)" choice
+    read -p "Rebuild: All(0), admin(1), homeapp(2), checkers(3), gloader(4), service(5), stripe(6) : " choice
   fi
 
 done

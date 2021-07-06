@@ -35,7 +35,7 @@ spec:
               name: google-config
               key: FCM_KEY
         - name: SERVER_TIMEZONE
-          value: "0"
+          value: "8"
         resources: {}
         volumeMounts:
         - name: pg-ca

@@ -53,7 +53,7 @@ spec:
         - name: LISTEN_ON
           value: 0.0.0.0:50051
         - name: SERVER_TIMEZONE
-          value: "0"
+          value: "8"
         - name: STRIPE_SECRET
           valueFrom:
             configMapKeyRef:

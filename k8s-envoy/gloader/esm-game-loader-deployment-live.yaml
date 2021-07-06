@@ -43,7 +43,7 @@ spec:
         - name: LISTEN_ON
           value: 0.0.0.0:3033
         - name: SERVER_TIMEZONE
-          value: "0"
+          value: "8"
         resources: {}
         ports:
         - containerPort: 3033

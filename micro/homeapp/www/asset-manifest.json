@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "https://esm-cdn.sgp1.digitaloceanspaces.com/app/dev/static/css/main.b49ee70c.chunk.css",
-    "main.js": "https://esm-cdn.sgp1.digitaloceanspaces.com/app/dev/static/js/main.d3037db8.chunk.js",
-    "main.js.map": "https://esm-cdn.sgp1.digitaloceanspaces.com/app/dev/static/js/main.d3037db8.chunk.js.map",
+    "main.css": "https://esm-cdn.sgp1.digitaloceanspaces.com/app/dev/static/css/main.d4d6ff78.chunk.css",
+    "main.js": "https://esm-cdn.sgp1.digitaloceanspaces.com/app/dev/static/js/main.980312f6.chunk.js",
+    "main.js.map": "https://esm-cdn.sgp1.digitaloceanspaces.com/app/dev/static/js/main.980312f6.chunk.js.map",
     "runtime-main.js": "https://esm-cdn.sgp1.digitaloceanspaces.com/app/dev/static/js/runtime-main.cf2a09ad.js",
     "runtime-main.js.map": "https://esm-cdn.sgp1.digitaloceanspaces.com/app/dev/static/js/runtime-main.cf2a09ad.js.map",
     "static/css/2.532db66e.chunk.css": "https://esm-cdn.sgp1.digitaloceanspaces.com/app/dev/static/css/2.532db66e.chunk.css",
-    "static/js/2.e752220c.chunk.js": "https://esm-cdn.sgp1.digitaloceanspaces.com/app/dev/static/js/2.e752220c.chunk.js",
-    "static/js/2.e752220c.chunk.js.map": "https://esm-cdn.sgp1.digitaloceanspaces.com/app/dev/static/js/2.e752220c.chunk.js.map",
+    "static/js/2.e5ec2f69.chunk.js": "https://esm-cdn.sgp1.digitaloceanspaces.com/app/dev/static/js/2.e5ec2f69.chunk.js",
+    "static/js/2.e5ec2f69.chunk.js.map": "https://esm-cdn.sgp1.digitaloceanspaces.com/app/dev/static/js/2.e5ec2f69.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.532db66e.chunk.css.map": "https://esm-cdn.sgp1.digitaloceanspaces.com/app/dev/static/css/2.532db66e.chunk.css.map",
-    "static/css/main.b49ee70c.chunk.css.map": "https://esm-cdn.sgp1.digitaloceanspaces.com/app/dev/static/css/main.b49ee70c.chunk.css.map",
-    "static/js/2.e752220c.chunk.js.LICENSE.txt": "https://esm-cdn.sgp1.digitaloceanspaces.com/app/dev/static/js/2.e752220c.chunk.js.LICENSE.txt"
+    "static/css/main.d4d6ff78.chunk.css.map": "https://esm-cdn.sgp1.digitaloceanspaces.com/app/dev/static/css/main.d4d6ff78.chunk.css.map",
+    "static/js/2.e5ec2f69.chunk.js.LICENSE.txt": "https://esm-cdn.sgp1.digitaloceanspaces.com/app/dev/static/js/2.e5ec2f69.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.cf2a09ad.js",
     "static/css/2.532db66e.chunk.css",
-    "static/js/2.e752220c.chunk.js",
-    "static/css/main.b49ee70c.chunk.css",
-    "static/js/main.d3037db8.chunk.js"
+    "static/js/2.e5ec2f69.chunk.js",
+    "static/css/main.d4d6ff78.chunk.css",
+    "static/js/main.980312f6.chunk.js"
   ]
 }
