@@ -30,7 +30,7 @@ usage_percent=$(echo $usage_percent | sed -e "s/%//g")
 if test $usage_percent -gt $RESIZE_THRESHOLD
 then
   echo ">${RESIZE_THRESHOLD}% disk space used, should resize."
-  extra=$value+5 #recommended to add 1Gi
+  extra=$(($value + 5)) #recommended to add 1Gi
   if test $extra -gt $size_to_resize #check if the user specified size to add is actually more than the recommended 1Gi
   then
     $size_to_resize=$extra #if user specified is lesser, use the 1Gi recommendation.
