@@ -20,8 +20,18 @@ spec:
       - name: checkers
         image: registry.digitalocean.com/esm-dev/live-checkers:latest
         env:
-        - name: CHECKER_TIME_WAIT
+        - name: CHECKER_CG_TIME_WAIT #current_game, prize closing
           value: "60"
+        - name: CHECKER_LB_TIME_WAIT #leaderboard checker
+          value: "30"
+        - name: CHECKER_SB_TIME_WAIT #subscriber checker
+          value: "60"
+        - name: CHECKER_UC_TIME_WAIT #unclaim checker
+          value: "60"
+        - name: MAX_HISTORY
+          value: "1000"
+        - name: MAX_NOTIFY
+          value: "1000"
         - name: DB_CERT_PATH
           value: /etc/ssl/certs/ca.crt
         - name: DB_CONN_STRING
