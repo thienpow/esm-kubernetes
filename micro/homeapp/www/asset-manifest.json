@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "https://esm-cdn.sgp1.digitaloceanspaces.com/app/livehttps://esm-cdn.sgp1.digitaloceanspaces.com/app/dev/static/css/main.d4d6ff78.chunk.css",
-    "main.js": "https://esm-cdn.sgp1.digitaloceanspaces.com/app/livehttps://esm-cdn.sgp1.digitaloceanspaces.com/app/dev/static/js/main.9e086ea7.chunk.js",
-    "main.js.map": "https://esm-cdn.sgp1.digitaloceanspaces.com/app/livehttps://esm-cdn.sgp1.digitaloceanspaces.com/app/dev/static/js/main.9e086ea7.chunk.js.map",
-    "runtime-main.js": "https://esm-cdn.sgp1.digitaloceanspaces.com/app/livehttps://esm-cdn.sgp1.digitaloceanspaces.com/app/dev/static/js/runtime-main.cf2a09ad.js",
-    "runtime-main.js.map": "https://esm-cdn.sgp1.digitaloceanspaces.com/app/livehttps://esm-cdn.sgp1.digitaloceanspaces.com/app/dev/static/js/runtime-main.cf2a09ad.js.map",
-    "static/css/2.532db66e.chunk.css": "https://esm-cdn.sgp1.digitaloceanspaces.com/app/livehttps://esm-cdn.sgp1.digitaloceanspaces.com/app/dev/static/css/2.532db66e.chunk.css",
-    "static/js/2.e5ec2f69.chunk.js": "https://esm-cdn.sgp1.digitaloceanspaces.com/app/livehttps://esm-cdn.sgp1.digitaloceanspaces.com/app/dev/static/js/2.e5ec2f69.chunk.js",
-    "static/js/2.e5ec2f69.chunk.js.map": "https://esm-cdn.sgp1.digitaloceanspaces.com/app/livehttps://esm-cdn.sgp1.digitaloceanspaces.com/app/dev/static/js/2.e5ec2f69.chunk.js.map",
+    "main.css": "https://esm-cdn.sgp1.digitaloceanspaces.com/app/dev/static/css/main.a800b128.chunk.css",
+    "main.js": "https://esm-cdn.sgp1.digitaloceanspaces.com/app/dev/static/js/main.565b8d1b.chunk.js",
+    "main.js.map": "https://esm-cdn.sgp1.digitaloceanspaces.com/app/dev/static/js/main.565b8d1b.chunk.js.map",
+    "runtime-main.js": "https://esm-cdn.sgp1.digitaloceanspaces.com/app/dev/static/js/runtime-main.cf2a09ad.js",
+    "runtime-main.js.map": "https://esm-cdn.sgp1.digitaloceanspaces.com/app/dev/static/js/runtime-main.cf2a09ad.js.map",
+    "static/css/2.532db66e.chunk.css": "https://esm-cdn.sgp1.digitaloceanspaces.com/app/dev/static/css/2.532db66e.chunk.css",
+    "static/js/2.d3541c60.chunk.js": "https://esm-cdn.sgp1.digitaloceanspaces.com/app/dev/static/js/2.d3541c60.chunk.js",
+    "static/js/2.d3541c60.chunk.js.map": "https://esm-cdn.sgp1.digitaloceanspaces.com/app/dev/static/js/2.d3541c60.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/2.532db66e.chunk.css.map": "https://esm-cdn.sgp1.digitaloceanspaces.com/app/livehttps://esm-cdn.sgp1.digitaloceanspaces.com/app/dev/static/css/2.532db66e.chunk.css.map",
-    "static/css/main.d4d6ff78.chunk.css.map": "https://esm-cdn.sgp1.digitaloceanspaces.com/app/livehttps://esm-cdn.sgp1.digitaloceanspaces.com/app/dev/static/css/main.d4d6ff78.chunk.css.map",
-    "static/js/2.e5ec2f69.chunk.js.LICENSE.txt": "https://esm-cdn.sgp1.digitaloceanspaces.com/app/livehttps://esm-cdn.sgp1.digitaloceanspaces.com/app/dev/static/js/2.e5ec2f69.chunk.js.LICENSE.txt"
+    "static/css/2.532db66e.chunk.css.map": "https://esm-cdn.sgp1.digitaloceanspaces.com/app/dev/static/css/2.532db66e.chunk.css.map",
+    "static/css/main.a800b128.chunk.css.map": "https://esm-cdn.sgp1.digitaloceanspaces.com/app/dev/static/css/main.a800b128.chunk.css.map",
+    "static/js/2.d3541c60.chunk.js.LICENSE.txt": "https://esm-cdn.sgp1.digitaloceanspaces.com/app/dev/static/js/2.d3541c60.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.cf2a09ad.js",
     "static/css/2.532db66e.chunk.css",
-    "static/js/2.e5ec2f69.chunk.js",
-    "static/css/main.d4d6ff78.chunk.css",
-    "static/js/main.9e086ea7.chunk.js"
+    "static/js/2.d3541c60.chunk.js",
+    "static/css/main.a800b128.chunk.css",
+    "static/js/main.565b8d1b.chunk.js"
   ]
 }
