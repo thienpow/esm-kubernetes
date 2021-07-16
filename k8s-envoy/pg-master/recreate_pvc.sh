@@ -60,3 +60,5 @@ sed -i.bak "s/storage:.*/storage: ${choice_size}Gi/" postgres-master-pvc-$LD.yam
 rm  postgres-master-pvc-$LD.yaml.bak
 kubectl apply -f postgres-master-pvc-$LD.yaml
 kubectl scale deploy pg-master  --replicas=1
+kubectl rollout restart deploy pg-standby
+kubectl rollout restart deploy pgpool
