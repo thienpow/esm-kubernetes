@@ -118,7 +118,8 @@ COPY public.checker_log (id, current_game_checked_on, current_game_time_spent, l
 \.
 COPY public.status_progress_type (id, title) FROM stdin;
 0	Inactive
-1	Running
+1	Ready
+2   Running
 666	Bad Link
 999	Ended
 9999	SOS Stopped
